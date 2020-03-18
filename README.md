@@ -1,16 +1,62 @@
-# fitnesstracker2020
+# gitFitnessTracker
+For interns
 
-A new Flutter application.
+Points to remember during development,
 
-## Getting Started
+1) never use static numbers for height or width of any widget
+	always use 
+	MediaQuery.of(context).size.height or
+	MediaQuery.of(context).size.width
+	
+2) make separate folders and file to make sure you code is clean
 
-This project is a starting point for a Flutter application.
+3) add a comment before every widget, writing description of that widget
 
-A few resources to get you started if this is your first Flutter project:
+4) Best way to implement a screen with multiple widget is use a Stack
+	read this and implement according to it
+	
+	
+					Scaffold
+					child: Container 
+					height: MediaQuery.of(context).size.height
+					width : MediaQuery.of(context).size.width
+					child: Stack
+							fit: expanded
+							children:
+							[
+								Alig(
+								aligment: Alignment(0,-0.9)
+								child: WidgetName1
+								),
+								Alig(
+								aligment: Alignment(0,-0.9)
+								child: WidgetName2
+								),
+								.
+								.
+								.
+								.
+								.
+								
+								
+							]
+							
+							
+	This approach will allow you to place your widget at any point on the screen
+	and it keeps the app responsive
+	
+5) remember we'll be using scoped model
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+6) GitHub
+	- everyone first fork the repo 
+	- clone the repo into your own system locally (clone the repo under your account)
+	  (clone the repo you forked, not the original repo)
+	- code into your local machine and push the code regularly
+	
+7) At the end of every page build click a snapshot of it and add it to the project and push the code
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+8) As soon as the page is build please verify it's design 
+
+9) maintain your exel accordingly and daily
+
+10) ask for help if stuck
