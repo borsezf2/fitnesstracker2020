@@ -1,4 +1,4 @@
-import 'package:fitness_tracker/page2.dart';
+import 'page2.dart';
 import 'package:flutter/material.dart';
 
 class Page1 extends StatefulWidget {
