@@ -11,24 +11,6 @@ class _ChallengesState extends State<Challenges> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 0.0,
-      //   backgroundColor: Colors.white,
-      //   leading: Builder(
-      //     builder: (BuildContext context) {
-      //       return IconButton(
-      //         color: Colors.blueAccent,
-      //         icon: const Icon(
-      //           Icons.arrow_back_ios,
-      //         ),
-      //         onPressed: () => Navigator.of(context).pop(),
-      //         tooltip: MaterialLocalizations
-      //             .of(context)
-      //             .openAppDrawerTooltip,
-      //       );
-      //     },
-      //   ),
-      // ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
@@ -48,13 +30,7 @@ class _ChallengesState extends State<Challenges> {
                       shape: RoundedRectangleBorder(
                         borderRadius:BorderRadius.circular(18.0)
                       ),
-                      onPressed: (){}, 
-                      // Navigator.push(
-                      //   context, 
-                      //   MaterialPageRoute(
-                      //     builder: (BuildContext context)=>Challenges()
-                      //   )
-                      // ), 
+                      onPressed: (){},  
                       child: Padding(
                         padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
                         child: Text(

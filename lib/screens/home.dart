@@ -1,11 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitnesstracker2020/cardCaursel.dart';
 import 'package:fitnesstracker2020/homeData.dart';
 import 'package:fitnesstracker2020/screens/challenges.dart';
 import 'package:fitnesstracker2020/screens/instantChallenge.dart';
 import 'package:fitnesstracker2020/screens/publicChallenge.dart';
 import 'package:flutter/material.dart';
-import 'package:fitnesstracker2020/multipleSelectChip.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -34,8 +32,6 @@ class _HomeState extends State<Home> {
           child: Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              // borderRadius: BorderRadius.only(topLeft:  Radius.circular(30)),
-              // border: Border.all(width: 0,color: Colors.white,style: BorderStyle.solid)
             ),
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
