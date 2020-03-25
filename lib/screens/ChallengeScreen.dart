@@ -1,16 +1,16 @@
+import 'package:fitnesstracker2020/ChallengeScreenData.dart';
 import 'package:fitnesstracker2020/cardCaursel.dart';
-import 'package:fitnesstracker2020/homeData.dart';
 import 'package:fitnesstracker2020/screens/challenges.dart';
 import 'package:fitnesstracker2020/screens/instantChallenge.dart';
 import 'package:fitnesstracker2020/screens/publicChallenge.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
+class Challenge extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _ChallengeState createState() => _ChallengeState();
 }
 
-class _HomeState extends State<Home> {
+class _ChallengeState extends State<Challenge> {
   List<String> reportList = [
     "Instant",
     "Public",
@@ -154,7 +154,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
                 //Home page data
-                HomeData(),
+                ChallengeScreenData(),
               ],
             )
           ),

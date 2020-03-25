@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomeData extends StatelessWidget {
+class ChallengeScreenData extends StatelessWidget {
 
   List<Card>_widget1(int count){
     return List.generate(

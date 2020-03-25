@@ -13,7 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      debugShowCheckedModeBanner: false,
+      home: Dashboard(),
     );
   }
 }
