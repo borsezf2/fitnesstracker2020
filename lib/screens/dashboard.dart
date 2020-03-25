@@ -1,4 +1,5 @@
-import 'package:fitnesstracker2020/screens/home.dart';
+import 'package:fitnesstracker2020/presentation/payment/homes.dart';
+import 'package:fitnesstracker2020/screens/ChallengeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
@@ -32,7 +33,7 @@ class _DashboardState extends State<Dashboard> {
           controller: _pageController,
           children: <Widget>[
             Home(),
-            Center(child:Text("data 0")),
+            Challenge(),
             Center(child:Text("data 1")),
             Center(child:Text("data 2")),
           ],
