@@ -18,6 +18,21 @@ class _HomeState extends State<Home> {
   ];
 
   List<String> seletedSectorList = List();
+
+  int _currentIndex=0;
+  PageController _pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -33,50 +48,56 @@ class _HomeState extends State<Home> {
             decoration: BoxDecoration(
               color: Colors.white,
             ),
-            height: MediaQuery.of(context).size.height,
+            // height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: <Widget>[
-                //Card Caursel
-                CardCaursel(),
-
-                //If the curve looking button are ***Choice Chip****
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //   children: <Widget>[
-                //     MultiSelectChip(
-                //     reportList,
-                //   ),
-                //   ],
-                // ),
-                //Cards
-
-                //If the curve looking buttons are ***FlatButtons***
+                //Page View
+                Expanded(
+                  child: PageView(
+                    controller: _pageController,
+                    children: <Widget>[
+                      CardCaursel(),
+                      CardCaursel(),
+                      CardCaursel()
+                    ],
+                    onPageChanged: (int index){
+                      setState(() {
+                        _currentIndex = index;
+                      });
+                    },
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    RaisedButton(
-                      elevation: 0.5,
-                      color: Color(0xffe6f2ff),
-                      shape: RoundedRectangleBorder(
-                        borderRadius:BorderRadius.circular(15.0)
-                      ),
-                      onPressed: ()=> Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (BuildContext context)=>InstantChallenge()
+                    GestureDetector(
+                      child: RaisedButton(
+                        elevation: 0.5,
+                        color: Color(0xffe6f2ff),
+                        shape: RoundedRectangleBorder(
+                          borderRadius:BorderRadius.circular(15.0)
+                        ),
+                        onPressed: () {
+                          if (_pageController.hasClients) {
+                            _pageController.animateToPage(
+                              1,
+                              duration: const Duration(milliseconds: 400),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        }, 
+                        child: Padding(
+                          padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
+                          child: Text(
+                            "Instant",
+                            style: TextStyle(
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500
+                          ),
+                          ),
                         )
-                      ),  
-                      child: Padding(
-                        padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
-                        child: Text(
-                          "Instant",
-                          style: TextStyle(
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500
-                        ),
-                        ),
-                      )
+                      ),
                     ),
                     RaisedButton(
                       elevation: 0.5,
@@ -84,13 +105,15 @@ class _HomeState extends State<Home> {
                       shape: RoundedRectangleBorder(
                         borderRadius:BorderRadius.circular(15.0)
                       ),
-                      onPressed: ()=> Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (BuildContext context)=>PublicChallenge
-                          ()
-                        )
-                      ), 
+                      onPressed: () {
+                        if (_pageController.hasClients) {
+                          _pageController.animateToPage(
+                            2,
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                      }, 
                       child: Padding(
                         padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
                         child: Text(
@@ -108,12 +131,15 @@ class _HomeState extends State<Home> {
                       shape: RoundedRectangleBorder(
                         borderRadius:BorderRadius.circular(15.0)
                       ),
-                      onPressed: ()=> Navigator.push(
-                        context, 
-                        MaterialPageRoute(
-                          builder: (BuildContext context)=>Challenges()
-                        )
-                      ), 
+                      onPressed: () {
+                          if (_pageController.hasClients) {
+                            _pageController.animateToPage(
+                              0,
+                              duration: const Duration(milliseconds: 400),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        },  
                       child: Padding(
                         padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
                         child: Text(
