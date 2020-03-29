@@ -554,7 +554,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: <Widget>[
             SizedBox(height:300.0),
-            Container(
+              Container(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
@@ -564,6 +564,7 @@ class _HomeState extends State<Home> {
                           Icons.flash_on
                         ),
                         RaisedButton(
+                          color: Color(0xffe6f2ff),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(15.0))
                           ),
@@ -582,6 +583,7 @@ class _HomeState extends State<Home> {
                           Icons.person_add
                         ),
                         RaisedButton(
+                          color: Color(0xffe6f2ff),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(15.0))
                           ),
@@ -600,6 +602,7 @@ class _HomeState extends State<Home> {
                           Icons.alarm
                         ),
                         RaisedButton(
+                          color: Color(0xffe6f2ff),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(15.0))
                           ),
@@ -613,11 +616,11 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              Divider(
-                thickness: 1.0,
-                color: Colors.black,
-              ),
-              SizedBox(height:1.0),
+              // Divider(
+              //   thickness: 1.0,
+              //   color: Colors.black,
+              // ),
+              SizedBox(height:5.0),
               Container(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -625,12 +628,21 @@ class _HomeState extends State<Home> {
                     children: <Widget>[
                       SizedBox(
                         width: MediaQuery.of(context).size.width,
-                        child: Text(
-                          'MORE ->',
-                          textAlign: TextAlign.end,
-                          style: TextStyle(
-                            color: Colors.black
-                          ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: <Widget>[
+                            Text(
+                              'MORE ',
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                color: Colors.black
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward,
+                              size: 18.0,
+                            )
+                          ],
                         ),
                       ),
                       SizedBox(height:5.0),
@@ -717,10 +729,10 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-              Divider(
-                thickness: 1.0,
-                color: Colors.black,
-              ),
+              // Divider(
+              //   thickness: 1.0,
+              //   color: Colors.black,
+              // ),
           ],
         ),
       ),
@@ -741,7 +753,7 @@ class _HomeState extends State<Home> {
                     });
                   },
                   child: Container(
-                      color: weekly ? Colors.white : Colors.grey,
+                      color: weekly ? Colors.blue[100] : Colors.grey,
                       child: Center(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
@@ -763,7 +775,7 @@ class _HomeState extends State<Home> {
                     });
                   },
                   child: Container(
-                      color: weekly ? Colors.grey : Colors.white,
+                      color: weekly ? Colors.grey : Colors.blue[100],
                       child: Center(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(

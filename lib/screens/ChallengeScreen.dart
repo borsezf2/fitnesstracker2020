@@ -21,9 +21,13 @@ class _ChallengeState extends State<Challenge> {
 
   int _currentIndex=0;
   PageController _pageController;
+  bool btn1,btn2,btn3;
 
   @override
   void initState() {
+    btn1=false;
+    btn2=false;
+    btn3=false;
     super.initState();
     _pageController = PageController();
   }
@@ -74,7 +78,7 @@ class _ChallengeState extends State<Challenge> {
                     GestureDetector(
                       child: RaisedButton(
                         elevation: 0.5,
-                        color: Color(0xffe6f2ff),
+                        color: btn1?Colors.green:Color(0xffe6f2ff),
                         shape: RoundedRectangleBorder(
                           borderRadius:BorderRadius.circular(15.0)
                         ),
@@ -86,22 +90,27 @@ class _ChallengeState extends State<Challenge> {
                               curve: Curves.easeInOut,
                             );
                           }
+                          setState(() {
+                            btn1=true;
+                            btn2=false;btn3=false;
+                          });
                         }, 
                         child: Padding(
                           padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
                           child: Text(
                             "Instant",
                             style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w500
-                          ),
+                              color: btn1? Colors.white:Colors.black,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500
+                            ),
                           ),
                         )
                       ),
                     ),
                     RaisedButton(
                       elevation: 0.5,
-                      color: Color(0xffe6f2ff),
+                      color: btn2?Colors.green:Color(0xffe6f2ff),
                       shape: RoundedRectangleBorder(
                         borderRadius:BorderRadius.circular(15.0)
                       ),
@@ -113,12 +122,17 @@ class _ChallengeState extends State<Challenge> {
                             curve: Curves.easeInOut,
                           );
                         }
+                        setState(() {
+                          btn2=true;
+                          btn1=false;btn3=false;
+                        });
                       }, 
                       child: Padding(
                         padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
                         child: Text(
                           "Public",
                           style: TextStyle(
+                            color: btn2? Colors.white:Colors.black,
                           fontSize: 15.0,
                           fontWeight: FontWeight.w500
                         ),
@@ -127,7 +141,7 @@ class _ChallengeState extends State<Challenge> {
                     ),
                     RaisedButton(
                       elevation: 0.5,
-                      color: Color(0xffe6f2ff),
+                      color: btn3?Colors.green:Color(0xffe6f2ff),
                       shape: RoundedRectangleBorder(
                         borderRadius:BorderRadius.circular(15.0)
                       ),
@@ -139,12 +153,17 @@ class _ChallengeState extends State<Challenge> {
                               curve: Curves.easeInOut,
                             );
                           }
+                          setState(() {
+                            btn3=true;
+                            btn2=false;btn1=false;
+                          });
                         },  
                       child: Padding(
                         padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
                         child: Text(
                           "Challenge",
                           style: TextStyle(
+                            color: btn3? Colors.white:Colors.black,
                           fontSize: 15.0,
                           fontWeight: FontWeight.w500
                         ),
