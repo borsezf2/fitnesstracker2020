@@ -56,22 +56,22 @@ class _DashboardState extends State<Dashboard> {
           items: [
             BottomNavyBarItem(
               icon: Icon(Icons.home),
-              title: Text('Home'),
+              title: Text('  Home'),
               activeColor: Colors.blueAccent,
             ),
             BottomNavyBarItem(
                 icon: Icon(Icons.whatshot),
-                title: Text('Challange'),
+                title: Text('  Challange'),
                 activeColor: Colors.purpleAccent
             ),
             BottomNavyBarItem(
                 icon: Icon(Icons.card_giftcard),
-                title: Text('Reward'),
+                title: Text('  Reward'),
                 activeColor: Colors.pink
             ),
             BottomNavyBarItem(
                 icon: Icon(Icons.music_note),
-                title: Text('Music'),
+                title: Text('  Music'),
                 activeColor: Colors.green
             ),
           ],
