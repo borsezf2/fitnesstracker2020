@@ -1,4 +1,4 @@
-import 'package:fitnesstracker2020/presentation/payment/homes.dart';
+import 'package:fitnesstracker2020/screens/homes.dart';
 import 'package:fitnesstracker2020/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Celias',
       ),
       debugShowCheckedModeBanner: false,
       home: Dashboard(),
