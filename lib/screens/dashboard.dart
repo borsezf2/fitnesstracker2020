@@ -1,4 +1,4 @@
-import 'package:fitnesstracker2020/presentation/payment/homes.dart';
+import 'package:fitnesstracker2020/screens/homes.dart';
 import 'package:fitnesstracker2020/screens/ChallengeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
@@ -56,7 +56,7 @@ class _DashboardState extends State<Dashboard> {
           items: [
             BottomNavyBarItem(
               icon: Icon(Icons.home),
-              title: Text('  Home'),
+              title: Text('  Home',),
               activeColor: Colors.blueAccent,
             ),
             BottomNavyBarItem(
