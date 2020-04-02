@@ -17,14 +17,17 @@ class ClicksPerYear {
       : this.color = charts.Color(
             r: color.red, g: color.green, b: color.blue, a: color.alpha);
 }
-  TextEditingController _searchController=TextEditingController();
+TextEditingController _searchController=TextEditingController();
 
 class _HomeState extends State<Home> {
-  bool weekly; //true for weekly false for monthly
-
+  bool weekly;
+  bool instbtn,follow,alarm;
   @override
   void initState() {
-    weekly = true; // TODO: implement initState
+    instbtn=false;
+    follow=false;
+    alarm=false;
+    weekly = true;
     super.initState();
   }
 
@@ -105,167 +108,211 @@ class _HomeState extends State<Home> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(22.0)
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(height:25.0),
-                    Text(
-                      "Abhi Nhi To Kabhi Nhi",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    // stops: [0.9,0.4],
+                    colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+                  )          
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(height:25.0),
+                      Text(
+                        "Abhi Nhi To Kabhi Nhi",
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          // fontWeight: FontWeight.bold
+                        ),
                       ),
-                    ),
-                    Text(
-                      "Alarm Lagao",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold
+                      Text(
+                        "Alarm Lagao",
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          // fontWeight: FontWeight.bold
+                        ),
                       ),
-                    ),
-                    ///content to be added
-                    SizedBox(height:50.0),
-                    Divider(
-                      thickness: 2.0,
-                      color: Colors.black,
-                    ),
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Align(
-                                alignment: Alignment.centerRight,
-                                child: Icon(
-                                  Icons.arrow_right,
-                                  size: 40.0,
-                                ),
+                      ///content to be added
+                      SizedBox(
+                        child: Image.asset('assets/alarm-clock.gif'),
+                      ),
+                      SizedBox(height:20.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 140.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.blue
                               )
                             ),
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                children: <Widget>[
-                                  Container(
-                                    width: 85.0,
-                                    height: 85.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Colors.black
-                                        )
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 85.0,
-                                    height: 85.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Colors.black
-                                        )
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 85.0,
-                                    height: 85.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Colors.black
-                                        )
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 85.0,
-                                    height: 85.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Colors.black
-                                        )
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 85.0,
-                                    height: 85.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Colors.black
-                                        )
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 85.0,
-                                    height: 85.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Colors.black
-                                        )
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
+                          ),
+                          SizedBox(width:20.0),
+                          Container(
+                            width: 80.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.blue
+                              )
                             ),
-                          ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height:10.0),
+                      Divider(
+                        thickness: 0.75,
+                        color: Colors.black54,
+                      ),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: <Widget>[
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width,
+                                child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Icon(
+                                    Icons.arrow_forward,
+                                    size: 32.0,
+                                  ),
+                                )
+                              ),
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      width: 85.0,
+                                      height: 85.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Colors.black
+                                          )
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 85.0,
+                                      height: 85.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Colors.black
+                                          )
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 85.0,
+                                      height: 85.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Colors.black
+                                          )
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 85.0,
+                                      height: 85.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Colors.black
+                                          )
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 85.0,
+                                      height: 85.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Colors.black
+                                          )
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 85.0,
+                                      height: 85.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Colors.black
+                                          )
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(height:15.0),
-                    TextField(
-                      controller: _searchController,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 6.0),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                      SizedBox(height:15.0),
+                      TextField(
+                        controller: _searchController,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(horizontal: 6.0),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                          ),
+                          hintText: "Enter text",
+                          filled: true,
+                          fillColor: Colors.white,
+                          focusColor: Colors.white,
+                          hoverColor: Colors.white
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        hintText: "Enter text",
-                        filled: true,
-                        fillColor: Colors.white,
-                        focusColor: Colors.white,
-                        hoverColor: Colors.white
                       ),
-                    ),
-                    SizedBox(height:20.0),
-                    FlatButton(
-                      shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                          color: Colors.blueAccent
+                      SizedBox(height:40.0),
+                      Container(
+                        width: 120.0,
+                        height: 40.0,
+                        child: RaisedButton(
+                          color: Colors.blueAccent,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              color: Colors.blueAccent
+                            ),
+                            borderRadius: BorderRadius.circular(22.0)
+                          ),
+                          onPressed: (){
+                            Navigator.of(context).pop();
+                          }, 
+                          child: Text(
+                            "OK",
+                            style: TextStyle(
+                              fontSize: 19.0,
+                              color: Colors.white
+                            ),
+                          )
                         ),
-                        borderRadius: BorderRadius.circular(22.0)
                       ),
-                      onPressed: (){
-                        Navigator.of(context).pop();
-                      }, 
-                      child: Text(
-                        "OK",
-                        style: TextStyle(
-                          fontSize: 19.0,
-                          color: Colors.black
-                        ),
-                      )
-                    )
-                  ],
+                      SizedBox(height:30.0),
+                    ],
+                  ),
                 ),
               )
             ),
@@ -277,13 +324,24 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        elevation: 0.0,
+        // backgroundColor: Color.fromRGBO(255, 247, 241, 1),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              // stops: [0.9,0.4],
+              colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+            )          
+          ),
+        ),
         leading: Builder(
           builder: (BuildContext context) {
             return IconButton(
               icon:Icon(
                 Icons.person,
-                color:Colors.black,
+                color:Colors.black38,
                 size: 32.0,
               ),
               onPressed: (){
@@ -298,31 +356,36 @@ class _HomeState extends State<Home> {
           child: TextField(
             controller: _searchController,
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(vertical: 1.0,horizontal: 6.0),
+              contentPadding: EdgeInsets.symmetric(horizontal: 10.0),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                borderRadius: BorderRadius.circular(25.0)
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                borderRadius: BorderRadius.circular(25.0)
               ),
-              hintText: 'Search',
+              hintText: '                   Home/Work',
+              hintStyle: TextStyle(
+                color: Colors.black26
+              ),
               suffixIcon: Container(
-                decoration: BoxDecoration(
-                  // borderRadius: BorderRadius.circular(100),
-                  border: Border.all(width: 1.0, color: Colors.grey)
-                ),
+                // decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(100),
+                //   border: Border.all(width: 1.0, color: Colors.grey)
+                // ),
                 child: IconButton(
                   icon: Icon(
                     Icons.search,
-                    color: Colors.green,
+                    color: Colors.black,
                   ),
                   onPressed: (){},
                 ),
               ),
-              filled: true,
-              fillColor: Colors.white,
-              focusColor: Colors.white,
-              hoverColor: Colors.white
+              // filled: true,
+              // fillColor: Colors.white,
+              // focusColor: Colors.white,
+              // hoverColor: Colors.white
             ),
             onSubmitted: (input){},
           ),
@@ -333,15 +396,15 @@ class _HomeState extends State<Home> {
             child: Column(
               children: <Widget>[
                 Text(
-                  "RANK",
+                  "Rank",
                   style: TextStyle(
-                    color: Colors.black
+                    color: Colors.black87
                   ),
                 ),
                 Text(
                   "2000",
                   style: TextStyle(
-                    color: Colors.black
+                    color: Colors.black87
                   ),
                 )
               ],
@@ -531,278 +594,319 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      // appBar: AppBar(
-      //   backgroundColor:Colors.white,actions: <Widget>[
-      //   GestureDetector(
-      //     onTap:(){Navigator.push(context,MaterialPageRoute(builder: (context)=>Friends()));},
-      //             child: Container(child:Padding(
-      //       padding: const EdgeInsets.all(5.0),
-      //       child: Icon(Icons.send,color: Colors.black,),
-      //     )),
-      //   )
-      // ],),
-        body: Container(
-          height: MediaQuery.of(context).size.height,
-
-          child: SingleChildScrollView(
-            child: Column(
-      children: <Widget>[
-//        Expanded(flex: 5, child: Container()),
-
-// ********************************************************************************
-// for himanshu, this this the container you ned to add your code in
-      Container(
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              child: Image.asset('assets/walking.gif'),
-            ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              // Container(
+              //   decoration: BoxDecoration(
+              //     gradient: LinearGradient(
+              //       begin: Alignment.topCenter,
+              //       end: Alignment.bottomCenter,
+              //       // stops: [0.9,0.4],
+              //       colors: <Color>[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+              //     )          
+              //   ),
+              //   height: 20.0,
+              // ),
             Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              child: Column(
                 children: <Widget>[
-                  Column(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/quick.gif',
-                        width: 32.0,
-                      ),
-                      RaisedButton(
-                        color: Color(0xffe6f2ff),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))
-                        ),
-                        onPressed: () {
-                          
-                        },
-                        child: Text(
-                          "Instant Challenge"
-                        ),
-                      )
-                    ],
+                  SizedBox(
+                    child: Image.asset('assets/walking.gif'),
                   ),
-                  Column(
-                    children: <Widget>[
-                      Icon(
-                        Icons.person_add,
-                        size: 32.0,
-                      ),
-                      RaisedButton(
-                        color: Color(0xffe6f2ff),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))
-                        ),
-                        onPressed: () {
-                          
-                        },
-                        child: Text(
-                          "Follow friend"
-                        ),
-                      )
-                    ],
+                  Divider(
+                    thickness: 1.0,
+                    color: Colors.black12,
                   ),
-                  Column(
-                    children: <Widget>[
-                      Image.asset(
-                        'assets/alarm-clock.gif',
-                        width: 32.0,
+                  SizedBox(height:5.0),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/quick.gif',
+                              width: 32.0,
+                            ),
+                            RaisedButton(
+                              color: instbtn?Color(0xff119F72):Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                side: BorderSide(
+                                  color: Color(0xff119F72)
+                                )
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  instbtn=true;
+                                  follow=false;alarm=false;
+                                });
+                              },
+                              child: Text(
+                                "Instant Challenge",
+                                style: TextStyle(
+                                  color: instbtn?Colors.white:Colors.black54,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Icon(
+                              Icons.person_add,
+                              size: 32.0,
+                            ),
+                            RaisedButton(
+                              color: follow?Color(0xff119F72):Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                side: BorderSide(
+                                  color: Color(0xff119F72)
+                                )
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  follow=true;
+                                  instbtn=false;alarm=false;
+                                });
+                              },
+                              child: Text(
+                                "Follow friend",
+                                style: TextStyle(
+                                  color: follow?Colors.white:Colors.black54,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Image.asset(
+                              'assets/alarm-clock.gif',
+                              width: 32.0,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  alarm=true;
+                                  instbtn=false;follow=false;
+                                });
+                              },
+                              child: RaisedButton(
+                                color: alarm?Color(0xff119F72):Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                  side: BorderSide(
+                                    color: Color(0xff119F72)
+                                  )
+                                ),
+                                onPressed: _showDialog,
+                                child: Text(
+                                  "Alarm",
+                                  style: TextStyle(
+                                    color: alarm?Colors.white:Colors.black54,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1.0,
+                    color: Colors.black12,
+                  ),
+                  // SizedBox(height:5.0),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                Column(
+                                  children: <Widget>[
+                                    Text(
+                                      'more ',
+                                      textAlign: TextAlign.end,
+                                      style: TextStyle(
+                                        color: Colors.black87,
+                                        decoration: TextDecoration.underline
+                                      ),
+                                    ),
+                                    // Divider(
+                                    //   thickness: 1.0,
+                                    //   color: Colors.black12,
+                                    // ),
+                                  ],
+                                ),
+                                Icon(
+                                  Icons.arrow_forward,
+                                  size: 25.0,
+                                  color: Colors.black87,
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(height:5.0),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: <Widget>[
+                                Container(
+                                  width: 95.0,
+                                  height: 95.0,
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                      side: BorderSide(
+                                        color: Color(0xff119F72)
+                                      )
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 95.0,
+                                  height: 95.0,
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                      side: BorderSide(
+                                        color: Color(0xff119F72)
+                                      )
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 95.0,
+                                  height: 95.0,
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                      side: BorderSide(
+                                        color: Color(0xff119F72)
+                                      )
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 95.0,
+                                  height: 95.0,
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                      side: BorderSide(
+                                        color: Color(0xff119F72)
+                                      )
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 95.0,
+                                  height: 95.0,
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                      side: BorderSide(
+                                        color: Color(0xff119F72)
+                                      )
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  width: 90.0,
+                                  height: 90.0,
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                      side: BorderSide(
+                                        color: Color(0xff119F72)
+                                      )
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      RaisedButton(
-                        color: Color(0xffe6f2ff),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15.0))
-                        ),
-                        onPressed: _showDialog,
-                        child: Text(
-                          "Alarm"
-                        ),
-                      )
-                    ],
-                  )
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1.0,
+                    color: Colors.black12,
+                  ),
                 ],
               ),
             ),
-            // Divider(
-            //   thickness: 1.0,
-            //   color: Colors.black,
-            // ),
-            SizedBox(height:5.0),
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Text(
-                            'MORE ',
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
-                              color: Colors.black
-                            ),
+            SizedBox(height:20.0),
+              Row(
+                children: <Widget>[
+                  SizedBox(width:30.0),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        weekly = true;
+                      });
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20.0, vertical: 10),
+                        child: Text(
+                          "Week",
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 20.0,
+                            decoration: TextDecoration.underline
                           ),
-                          Icon(
-                            Icons.arrow_forward,
-                            size: 18.0,
-                          )
-                        ],
+                        ),
                       ),
                     ),
-                    SizedBox(height:5.0),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: <Widget>[
-                          Container(
-                            width: 100.0,
-                            height: 100.0,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                side: BorderSide(
-                                  color: Colors.black
-                                )
-                              ),
-                            ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        weekly = false;
+                      });
+                    },
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20.0, vertical: 10),
+                        child: Text(
+                          "Month",
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontSize: 20.0,
+                            decoration: TextDecoration.underline
                           ),
-                          Container(
-                            width: 100.0,
-                            height: 100.0,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                side: BorderSide(
-                                  color: Colors.black
-                                )
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 100.0,
-                            height: 100.0,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                side: BorderSide(
-                                  color: Colors.black
-                                )
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 100.0,
-                            height: 100.0,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                side: BorderSide(
-                                  color: Colors.black
-                                )
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 100.0,
-                            height: 100.0,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                side: BorderSide(
-                                  color: Colors.black
-                                )
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 100.0,
-                            height: 100.0,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                side: BorderSide(
-                                  color: Colors.black
-                                )
-                              ),
-                            ),
-                          )
-                        ],
+                        ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ]
               ),
-            ),
-            // Divider(
-            //   thickness: 1.0,
-            //   color: Colors.black,
-            // ),
-          ],
-        ),
-      ),
-      SizedBox(height:20.0),
- // ********************************************************************************
-
-
-            Row(children: <Widget>[
-              SizedBox(
-                width: 50,
-              ),
-              Expanded(
-                flex: 1,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      weekly = true;
-                    });
-                  },
-                  child: Container(
-                      color: weekly ? Colors.blue[100] : Colors.grey,
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20.0, vertical: 10),
-                          child: Text("Weekly"),
-                        ),
-                      )),
-                ),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Expanded(
-                flex: 1,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      weekly = false;
-                    });
-                  },
-                  child: Container(
-                      color: weekly ? Colors.grey : Colors.blue[100],
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20.0, vertical: 10),
-                          child: Text("Monthly"),
-                        ),
-                      )),
-                ),
-              ),
-              SizedBox(
-                width: 50,
-              ),
-            ]),
-            Container(
+              Container(
                 height: 250,
-//                color: Colors.blue,
-                child:
-                    Container(child: weekly ? chartWidgetWeek : chartWidgetMonth))
-      ],
-    ),
+                // color: Colors.blue,
+                child:Container(
+                  child: weekly ? chartWidgetWeek : chartWidgetMonth
+                )
+              )
+            ],
           ),
-        ));
+        ),
+      )
+    );
   }
 }
