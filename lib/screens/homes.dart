@@ -190,75 +190,81 @@ class _HomeState extends State<Home> {
                                 child: Row(
                                   children: <Widget>[
                                     Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 82.0,
+                                      height: 82.0,
                                       child: Card(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                           side: BorderSide(
-                                            color: Colors.black
+                                            color: Color(0xff119F72)
                                           )
                                         ),
+                                        child: Image.asset('assets/reward1.png'),
                                       ),
                                     ),
                                     Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 82.0,
+                                      height: 82.0,
                                       child: Card(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                           side: BorderSide(
-                                            color: Colors.black
+                                            color: Color(0xff119F72)
                                           )
                                         ),
+                                        child: Image.asset('assets/reward1.png'),
                                       ),
                                     ),
                                     Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 82.0,
+                                      height: 82.0,
                                       child: Card(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                           side: BorderSide(
-                                            color: Colors.black
+                                            color: Color(0xff119F72)
                                           )
                                         ),
+                                        child: Image.asset('assets/reward1.png'),
                                       ),
                                     ),
                                     Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 82.0,
+                                      height: 82.0,
                                       child: Card(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                           side: BorderSide(
-                                            color: Colors.black
+                                            color: Color(0xff119F72)
                                           )
                                         ),
+                                        child: Image.asset('assets/reward1.png'),
                                       ),
                                     ),
                                     Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 82.0,
+                                      height: 82.0,
                                       child: Card(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                           side: BorderSide(
-                                            color: Colors.black
+                                            color: Color(0xff119F72)
                                           )
                                         ),
+                                        child: Image.asset('assets/reward1.png'),
                                       ),
                                     ),
                                     Container(
-                                      width: 85.0,
-                                      height: 85.0,
+                                      width: 82.0,
+                                      height: 82.0,
                                       child: Card(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                           side: BorderSide(
-                                            color: Colors.black
+                                            color: Color(0xff119F72)
                                           )
                                         ),
+                                        child: Image.asset('assets/reward1.png'),
                                       ),
                                     )
                                   ],
@@ -323,94 +329,100 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        elevation: 0.0,
-        // backgroundColor: Color.fromRGBO(255, 247, 241, 1),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              // stops: [0.9,0.4],
-              colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
-            )          
-          ),
-        ),
-        leading: Builder(
-          builder: (BuildContext context) {
-            return IconButton(
-              icon:Icon(
-                Icons.person,
-                color:Colors.black38,
-                size: 32.0,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(80.0),
+        child: Padding(
+          padding: const EdgeInsets.only(top:.0),
+          child: AppBar(
+            elevation: 0.0,
+            // backgroundColor: Color.fromRGBO(255, 247, 241, 1),
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  // stops: [0.9,0.4],
+                  colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+                )          
               ),
-              onPressed: (){
-                Scaffold.of(context).openDrawer();
-              } 
-            );
-          }
-        ),
-        title: Container(
-          width: MediaQuery.of(context).size.width,
-          height: 45.0,
-          child: TextField(
-            controller: _searchController,
-            decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(horizontal: 10.0),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                borderRadius: BorderRadius.circular(25.0)
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                borderRadius: BorderRadius.circular(25.0)
-              ),
-              hintText: '                   Home/Work',
-              hintStyle: TextStyle(
-                color: Colors.black26
-              ),
-              suffixIcon: Container(
-                // decoration: BoxDecoration(
-                //   borderRadius: BorderRadius.circular(100),
-                //   border: Border.all(width: 1.0, color: Colors.grey)
-                // ),
-                child: IconButton(
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.black,
+            ),
+            leading: Builder(
+              builder: (BuildContext context) {
+                return IconButton(
+                  icon:Icon(
+                    Icons.person,
+                    color:Colors.black38,
+                    size: 32.0,
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Scaffold.of(context).openDrawer();
+                  } 
+                );
+              }
+            ),
+            title: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 38.0,
+              child: TextField(
+                controller: _searchController,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                    borderRadius: BorderRadius.circular(25.0)
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                    borderRadius: BorderRadius.circular(25.0)
+                  ),
+                  hintText: '                   Home/Work',
+                  hintStyle: TextStyle(
+                    color: Colors.black26
+                  ),
+                  suffixIcon: Container(
+                    // decoration: BoxDecoration(
+                    //   borderRadius: BorderRadius.circular(100),
+                    //   border: Border.all(width: 1.0, color: Colors.grey)
+                    // ),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.search,
+                        color: Colors.black,
+                      ),
+                      onPressed: (){},
+                    ),
+                  ),
+                  // filled: true,
+                  // fillColor: Colors.white,
+                  // focusColor: Colors.white,
+                  // hoverColor: Colors.white
+                ),
+                onSubmitted: (input){},
+              ),
+            ),
+            actions: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top:10.0,right: 8.0),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      "Rank",
+                      style: TextStyle(
+                        color: Colors.black87
+                      ),
+                    ),
+                    Text(
+                      "2000",
+                      style: TextStyle(
+                        color: Colors.black87
+                      ),
+                    )
+                  ],
                 ),
               ),
-              // filled: true,
-              // fillColor: Colors.white,
-              // focusColor: Colors.white,
-              // hoverColor: Colors.white
-            ),
-            onSubmitted: (input){},
+            ],
           ),
         ),
-        actions: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(top:10.0,right: 8.0),
-            child: Column(
-              children: <Widget>[
-                Text(
-                  "Rank",
-                  style: TextStyle(
-                    color: Colors.black87
-                  ),
-                ),
-                Text(
-                  "2000",
-                  style: TextStyle(
-                    color: Colors.black87
-                  ),
-                )
-              ],
-            ),
-          ),
-        ],
       ),
       drawer: Drawer(
         child: Container(
@@ -421,30 +433,18 @@ class _HomeState extends State<Home> {
               Container(
                 child: Padding(
                   padding: const EdgeInsets.all(9.0),
-                  child: Row(
+                  child: Column(
                     children: <Widget>[
-                      Column(
+                      Row(
                         children: <Widget>[
+                          SizedBox(width:2.0),
                           CircleAvatar(
                             radius: 35.0,
                             backgroundImage: AssetImage('assets/user_placeholder.png'),
                           ),
-                          SizedBox(height:18.0),
-                          Text(
-                            "NIKHIL",
-                            style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(width:10.0),
-                      Column(
-                        children: <Widget>[
-                          SizedBox(height:15.0),
+                          SizedBox(width:8.0),
                           LinearPercentIndicator(
-                            width: MediaQuery.of(context).size.width*0.52,
+                            width: MediaQuery.of(context).size.width*0.5,
                             animation: false,
                             // animationDuration: 1000,
                             lineHeight: 15.0,
@@ -458,9 +458,25 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                             linearStrokeCap: LinearStrokeCap.roundAll,
-                            progressColor: Colors.red,
+                            progressColor: Colors.blueAccent,
                           ),
-                          SizedBox(height:12.0),
+                        ],
+                      ),
+                      // SizedBox(width:10.0),
+                      Row(
+                        children: <Widget>[
+                          SizedBox(width:15.0),
+                          Padding(
+                            padding: const EdgeInsets.only(top:20.0),
+                            child: Text(
+                              "NIKHIL",
+                              style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                          ),
+                          SizedBox(width:18.0),
                           Row(
                             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
@@ -477,7 +493,7 @@ class _HomeState extends State<Home> {
                                     "2Lac",
                                     style: TextStyle(
                                       fontSize: 15.0,
-                                      fontWeight: FontWeight.bold
+                                      // fontWeight: FontWeight.bold
                                     ),
                                   )
                                 ],
@@ -498,7 +514,7 @@ class _HomeState extends State<Home> {
                                     "2000",
                                     style: TextStyle(
                                     fontSize: 15.0,
-                                    fontWeight: FontWeight.bold
+                                    // fontWeight: FontWeight.bold
                                   ),
                                   )
                                 ],
@@ -512,7 +528,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               SizedBox(height:20.0),
-              ListTile(
+              ExpansionTile(
                 title: Text(
                   "Account",
                   style: TextStyle(
@@ -524,6 +540,24 @@ class _HomeState extends State<Home> {
                   size: 28.0,
                   color: Colors.black
                 ),
+                children: <Widget>[
+                  ListTile(
+                    title: Text(
+                      'Privacy Policy'
+                    ),
+                    trailing: Icon(
+                      Icons.account_balance
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(
+                      'Profile'
+                    ),
+                    trailing: Icon(
+                      Icons.account_balance
+                    ),
+                  )
+                ],
               ),
               ListTile(
                 title: Text(
@@ -599,256 +633,253 @@ class _HomeState extends State<Home> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              // Container(
-              //   decoration: BoxDecoration(
-              //     gradient: LinearGradient(
-              //       begin: Alignment.topCenter,
-              //       end: Alignment.bottomCenter,
-              //       // stops: [0.9,0.4],
-              //       colors: <Color>[Color.fromRGBO(255, 247, 241, 1),Colors.white]
-              //     )          
-              //   ),
-              //   height: 20.0,
-              // ),
-            Container(
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    child: Image.asset('assets/walking.gif'),
-                  ),
-                  Divider(
-                    thickness: 1.0,
-                    color: Colors.black12,
-                  ),
-                  SizedBox(height:5.0),
-                  Container(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Image.asset(
-                              'assets/quick.gif',
-                              width: 32.0,
-                            ),
-                            RaisedButton(
-                              color: instbtn?Color(0xff119F72):Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                                side: BorderSide(
-                                  color: Color(0xff119F72)
-                                )
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      child: Image.asset('assets/walking.gif',
+                        width: 250.0,
+                      ),
+                    ),
+                    Divider(
+                      thickness: 1.0,
+                      color: Colors.black12,
+                    ),
+                    // SizedBox(height:5.0),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Image.asset(
+                                'assets/quick.gif',
+                                width: 28.0,
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  instbtn=true;
-                                  follow=false;alarm=false;
-                                });
-                              },
-                              child: Text(
-                                "Instant Challenge",
-                                style: TextStyle(
-                                  color: instbtn?Colors.white:Colors.black54,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: <Widget>[
-                            Icon(
-                              Icons.person_add,
-                              size: 32.0,
-                            ),
-                            RaisedButton(
-                              color: follow?Color(0xff119F72):Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                                side: BorderSide(
-                                  color: Color(0xff119F72)
-                                )
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  follow=true;
-                                  instbtn=false;alarm=false;
-                                });
-                              },
-                              child: Text(
-                                "Follow friend",
-                                style: TextStyle(
-                                  color: follow?Colors.white:Colors.black54,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: <Widget>[
-                            Image.asset(
-                              'assets/alarm-clock.gif',
-                              width: 32.0,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  alarm=true;
-                                  instbtn=false;follow=false;
-                                });
-                              },
-                              child: RaisedButton(
-                                color: alarm?Color(0xff119F72):Colors.white,
+                              RaisedButton(
+                                color: instbtn?Color(0xff119F72):Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.all(Radius.circular(15.0)),
                                   side: BorderSide(
                                     color: Color(0xff119F72)
                                   )
                                 ),
-                                onPressed: _showDialog,
+                                onPressed: () {
+                                  setState(() {
+                                    instbtn=true;
+                                    follow=false;alarm=false;
+                                  });
+                                },
                                 child: Text(
-                                  "Alarm",
+                                  "Instant Challenge",
                                   style: TextStyle(
-                                    color: alarm?Colors.white:Colors.black54,
+                                    color: instbtn?Colors.white:Colors.black54,
                                   ),
                                 ),
+                              )
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Icon(
+                                Icons.person_add,
+                                size: 28.0,
                               ),
-                            )
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  Divider(
-                    thickness: 1.0,
-                    color: Colors.black12,
-                  ),
-                  // SizedBox(height:5.0),
-                  Container(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: <Widget>[
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: <Widget>[
-                                Column(
-                                  children: <Widget>[
-                                    Text(
-                                      'more ',
-                                      textAlign: TextAlign.end,
-                                      style: TextStyle(
-                                        color: Colors.black87,
-                                        decoration: TextDecoration.underline
-                                      ),
-                                    ),
-                                    // Divider(
-                                    //   thickness: 1.0,
-                                    //   color: Colors.black12,
-                                    // ),
-                                  ],
+                              RaisedButton(
+                                color: follow?Color(0xff119F72):Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                  side: BorderSide(
+                                    color: Color(0xff119F72)
+                                  )
                                 ),
-                                Icon(
-                                  Icons.arrow_forward,
-                                  size: 25.0,
-                                  color: Colors.black87,
-                                )
-                              ],
-                            ),
+                                onPressed: () {
+                                  setState(() {
+                                    follow=true;
+                                    instbtn=false;alarm=false;
+                                  });
+                                },
+                                child: Text(
+                                  "Follow friend",
+                                  style: TextStyle(
+                                    color: follow?Colors.white:Colors.black54,
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
-                          SizedBox(height:5.0),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: <Widget>[
-                                Container(
-                                  width: 95.0,
-                                  height: 95.0,
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                      side: BorderSide(
-                                        color: Color(0xff119F72)
-                                      )
+                          Column(
+                            children: <Widget>[
+                              Image.asset(
+                                'assets/alarm-clock.gif',
+                                width: 28.0,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    alarm=true;
+                                    instbtn=false;follow=false;
+                                  });
+                                },
+                                child: RaisedButton(
+                                  color: alarm?Color(0xff119F72):Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                                    side: BorderSide(
+                                      color: Color(0xff119F72)
+                                    )
+                                  ),
+                                  onPressed: _showDialog,
+                                  child: Text(
+                                    "Alarm",
+                                    style: TextStyle(
+                                      color: alarm?Colors.white:Colors.black54,
                                     ),
                                   ),
                                 ),
-                                Container(
-                                  width: 95.0,
-                                  height: 95.0,
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                      side: BorderSide(
-                                        color: Color(0xff119F72)
-                                      )
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 95.0,
-                                  height: 95.0,
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                      side: BorderSide(
-                                        color: Color(0xff119F72)
-                                      )
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 95.0,
-                                  height: 95.0,
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                      side: BorderSide(
-                                        color: Color(0xff119F72)
-                                      )
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 95.0,
-                                  height: 95.0,
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                      side: BorderSide(
-                                        color: Color(0xff119F72)
-                                      )
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  width: 90.0,
-                                  height: 90.0,
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                      side: BorderSide(
-                                        color: Color(0xff119F72)
-                                      )
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
-                  ),
-                  Divider(
-                    thickness: 1.0,
-                    color: Colors.black12,
-                  ),
-                ],
+                    Divider(
+                      thickness: 1.0,
+                      color: Colors.black12,
+                    ),
+                    // SizedBox(height:5.0),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left:6.0,right:6.0),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: <Widget>[
+                                  Column(
+                                    children: <Widget>[
+                                      Text(
+                                        'more ',
+                                        textAlign: TextAlign.end,
+                                        style: TextStyle(
+                                          color: Colors.black87,
+                                          decoration: TextDecoration.underline
+                                        ),
+                                      ),
+                                      // Divider(
+                                      //   thickness: 1.0,
+                                      //   color: Colors.black12,
+                                      // ),
+                                    ],
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward,
+                                    size: 25.0,
+                                    color: Colors.black87,
+                                  )
+                                ],
+                              ),
+                            ),
+                            // SizedBox(height:5.0),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: <Widget>[
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Divider(
+                      thickness: 1.0,
+                      color: Colors.black12,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height:20.0),
+              // SizedBox(height:20.0),
               Row(
                 children: <Widget>[
                   SizedBox(width:30.0),
@@ -859,20 +890,17 @@ class _HomeState extends State<Home> {
                       });
                     },
                     child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 10),
-                        child: Text(
-                          "Week",
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 20.0,
-                            decoration: TextDecoration.underline
-                          ),
+                      child: Text(
+                        "Week",
+                        style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 18.0,
+                          decoration: TextDecoration.underline
                         ),
                       ),
                     ),
                   ),
+                  SizedBox(width:30.0),
                   GestureDetector(
                     onTap: () {
                       setState(() {
@@ -880,16 +908,12 @@ class _HomeState extends State<Home> {
                       });
                     },
                     child: Center(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 10),
-                        child: Text(
-                          "Month",
-                          style: TextStyle(
-                            color: Colors.black54,
-                            fontSize: 20.0,
-                            decoration: TextDecoration.underline
-                          ),
+                      child: Text(
+                        "Month",
+                        style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 18.0,
+                          decoration: TextDecoration.underline
                         ),
                       ),
                     ),
@@ -899,9 +923,7 @@ class _HomeState extends State<Home> {
               Container(
                 height: 250,
                 // color: Colors.blue,
-                child:Container(
-                  child: weekly ? chartWidgetWeek : chartWidgetMonth
-                )
+                child:weekly ? chartWidgetWeek : chartWidgetMonth
               )
             ],
           ),

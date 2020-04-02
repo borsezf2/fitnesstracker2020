@@ -18,11 +18,11 @@ class _DashboardState extends State<Dashboard> {
     _pageController = PageController();
   }
 
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _pageController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -44,39 +44,92 @@ class _DashboardState extends State<Dashboard> {
           },
         ),
       ),
-      bottomNavigationBar: SafeArea(
-
-        child: BottomNavyBar(
-          selectedIndex: _currentIndex,
-          showElevation: true, // use this to remove appBar's elevation
-          onItemSelected: (index) {
-            setState(() => _currentIndex = index);
-            _pageController.jumpToPage(index);
-          },
-          items: [
-            BottomNavyBarItem(
-              icon: Icon(Icons.home),
-              title: Text('  Home',),
-              activeColor: Colors.blueAccent,
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        type: BottomNavigationBarType.fixed,
+        // fixedColor: Colors.black,
+        selectedItemColor: Colors.blueAccent,
+        unselectedItemColor: Colors.black87,
+        currentIndex: _currentIndex,
+        onTap: (index){
+          setState(() {
+            _currentIndex=index;
+          });
+          _pageController.animateToPage(
+            index,
+            duration:Duration(milliseconds: 200),
+            curve: Curves.easeIn,
+          );
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
             ),
-            BottomNavyBarItem(
-                icon: Icon(Icons.whatshot),
-                title: Text('  Challange'),
-                activeColor: Colors.purpleAccent
+            title: Text(
+              'Home',
             ),
-            BottomNavyBarItem(
-                icon: Icon(Icons.card_giftcard),
-                title: Text('  Reward'),
-                activeColor: Colors.pink
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.whatshot,
             ),
-            BottomNavyBarItem(
-                icon: Icon(Icons.music_note),
-                title: Text('  Music'),
-                activeColor: Colors.green
+            title: Text(
+              'Challenge',
             ),
-          ],
-        ),
-      )
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.card_giftcard,
+            ),
+            title: Text(
+              'Rewards',
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.graphic_eq,
+            ),
+            title: Text(
+              'Music',
+            ),
+          ),
+        ]
+      ),
     );
+    //   bottomNavigationBar: SafeArea(
+
+    //     child: BottomNavyBar(
+    //       selectedIndex: _currentIndex,
+    //       showElevation: true, // use this to remove appBar's elevation
+    //       onItemSelected: (index) {
+    //         setState(() => _currentIndex = index);
+    //         _pageController.jumpToPage(index);
+    //       },
+    //       items: [
+    //         BottomNavyBarItem(
+    //           icon: Icon(Icons.home),
+    //           title: Text('  Home',),
+    //           activeColor: Colors.blueAccent,
+    //         ),
+    //         BottomNavyBarItem(
+    //             icon: Icon(Icons.whatshot),
+    //             title: Text('  Challange'),
+    //             activeColor: Colors.purpleAccent
+    //         ),
+    //         BottomNavyBarItem(
+    //             icon: Icon(Icons.card_giftcard),
+    //             title: Text('  Reward'),
+    //             activeColor: Colors.pink
+    //         ),
+    //         BottomNavyBarItem(
+    //             icon: Icon(Icons.music_note),
+    //             title: Text('  Music'),
+    //             activeColor: Colors.green
+    //         ),
+    //       ],
+    //     ),
+    //   )
+    // );
   }
 }
