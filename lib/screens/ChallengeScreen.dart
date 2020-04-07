@@ -1,182 +1,425 @@
-import 'package:fitnesstracker2020/ChallengeScreenData.dart';
-import 'package:fitnesstracker2020/cardCaursel.dart';
-import 'package:fitnesstracker2020/screens/challenges.dart';
-import 'package:fitnesstracker2020/screens/instantChallenge.dart';
-import 'package:fitnesstracker2020/screens/publicChallenge.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class Challenge extends StatefulWidget {
+class ChallengeScreen extends StatefulWidget {
   @override
-  _ChallengeState createState() => _ChallengeState();
+  _ChallengeScreenState createState() => _ChallengeScreenState();
 }
 
-class _ChallengeState extends State<Challenge> {
-  List<String> reportList = [
-    "Instant",
-    "Public",
-    "Challenge"
-  ];
-
-  List<String> seletedSectorList = List();
-
-  int _currentIndex=0;
-  PageController _pageController;
-  bool btn1,btn2,btn3;
-
-  @override
-  void initState() {
-    btn1=false;
-    btn2=false;
-    btn3=false;
-    super.initState();
-    _pageController = PageController();
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
-  
+class _ChallengeScreenState extends State<ChallengeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          alignment: Alignment.topCenter,
-          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * .05),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-            ),
-            // height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Column(
+      appBar: AppBar(
+        elevation: 0.0,
+        centerTitle: true,
+        title: Text(
+          'Challenge',
+          style: TextStyle(
+            color: Colors.black
+          ),
+        ),
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
+        backgroundColor: Color.fromRGBO(255, 247, 241, 1),
+      ),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            Stack(
               children: <Widget>[
-                //Page View
-                Expanded(
-                  child: PageView(
-                    controller: _pageController,
-                    children: <Widget>[
-                      CardCaursel(),
-                      CardCaursel(),
-                      CardCaursel()
-                    ],
-                    onPageChanged: (int index){
-                      setState(() {
-                        _currentIndex = index;
-                      });
-                    },
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      // stops: [0.9,0.4],
+                      colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+                    )          
                   ),
+                  height: 80.0,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    GestureDetector(
-                      child: RaisedButton(
-                        elevation: 0.5,
-                        color: btn1?Colors.green:Color(0xffe6f2ff),
-                        shape: RoundedRectangleBorder(
-                          borderRadius:BorderRadius.circular(15.0)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Card(
+                    color: Color(0xff4C2165),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(22.0)
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        Container(
+                          decoration: BoxDecoration(
+                            // borderRadius: BorderRadius.only(bottomLeft: Radius.circular(22.0),bottomRight: Radius.circular(22.0),topRight:Radius.circular(22.0),topLeft: Radius.circular(22.0) ),
+                            borderRadius: BorderRadius.circular(22.0),
+                            color: Color(0xff663782),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left:25.0,right: 25.0,top: 20.0,bottom: 20.0),
+                            child: Column(
+                              children: <Widget>[
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(22.0)
+                                  ),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Text(
+                                            'Your Steps',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 23.0,
+                                              fontWeight: FontWeight.bold
+                                            ),
+                                          ),
+                                          SizedBox(height: MediaQuery.of(context).size.height*0.02,),
+                                          Row(
+                                            children: <Widget>[
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  Text(
+                                                    'Distance',
+                                                    style: TextStyle(
+                                                      color: Colors.white54,
+                                                      fontSize: 14.0
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                                  Text(
+                                                    'Calories',
+                                                    style: TextStyle(
+                                                      color: Colors.white54,
+                                                      fontSize: 14.0
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                                  Text(
+                                                    'Pace',
+                                                    style: TextStyle(
+                                                      color: Colors.white54,
+                                                      fontSize: 14.0
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                              SizedBox(width: MediaQuery.of(context).size.width*0.043,),  
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: <Widget>[
+                                                  Text(
+                                                    '1.3',
+                                                    style: TextStyle(
+                                                      color: Colors.white54,
+                                                      fontSize: 14.0
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                                  Text(
+                                                    '42',
+                                                    style: TextStyle(
+                                                      color: Colors.white54,
+                                                      fontSize: 14.0
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                                  Text(
+                                                    '25.32/km (avg)',
+                                                    style: TextStyle(
+                                                      color: Colors.white54,
+                                                      fontSize: 14.0
+                                                    ),
+                                                  )
+                                                ],
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(bottom:37.0,left: 8.5),
+                                        child: Column(
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: <Widget>[
+                                            CircularPercentIndicator(
+                                              radius: 85.0,
+                                              animation: true,
+                                              animationDuration: 1200,
+                                              lineWidth: 4.0,
+                                              percent: 0.8,
+                                              center: GestureDetector(
+                                                onTap: () {
+                                                },
+                                                child: Text(
+                                                  '1330',
+                                                  style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 18.0,
+                                                    fontWeight: FontWeight.bold
+                                                  ),
+                                                )
+                                              ),
+                                              circularStrokeCap: CircularStrokeCap.butt,
+                                              backgroundColor: Colors.white24,
+                                              progressColor: Colors.orange,
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                        onPressed: () {
-                          if (_pageController.hasClients) {
-                            _pageController.animateToPage(
-                              1,
-                              duration: const Duration(milliseconds: 400),
-                              curve: Curves.easeInOut,
-                            );
-                          }
-                          setState(() {
-                            btn1=true;
-                            btn2=false;btn3=false;
-                          });
-                        }, 
-                        child: Padding(
-                          padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
-                          child: Text(
-                            "Instant",
-                            style: TextStyle(
-                              color: btn1? Colors.white:Colors.black,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w500
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(22.0),bottomRight: Radius.circular(22.0)),
+                            color: Color(0xff4C2165),
+                          ),
+                          height: MediaQuery.of(context).size.height*0.055,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left:30.0,right: 30.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.directions_walk,
+                                  color: Colors.orange,
+                                ),
+                                SizedBox(width: MediaQuery.of(context).size.width*0.01,),
+                                RichText(
+                                  text:TextSpan(
+                                    text: 'You are just ',
+                                    style: TextStyle(
+                                      color: Colors.white54,
+                                      fontSize: 13.0
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                        text: '120 steps ',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold
+                                        )
+                                      ),
+                                      TextSpan(
+                                        text: 'away from others'
+                                      )
+                                    ]
+                                  ) 
+                                )
+                              ],
                             ),
                           ),
                         )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(22.0)
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      decoration: BoxDecoration(
+                        // borderRadius: BorderRadius.only(bottomLeft: Radius.circular(22.0),bottomRight: Radius.circular(22.0),topRight:Radius.circular(22.0),topLeft: Radius.circular(22.0) ),
+                        borderRadius: BorderRadius.circular(22.0),
+                        color: Color(0xff1A5F68),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left:25.0,right: 25.0,top: 20.0,bottom: 20.0),
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(22.0)
+                              ),
+                              child: Row(
+                                children: <Widget>[
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: <Widget>[
+                                      Text(
+                                        'Other Steps',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 23.0,
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                      ),
+                                      SizedBox(height: MediaQuery.of(context).size.height*0.02,),
+                                      Row(
+                                        children: <Widget>[
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text(
+                                                'Distance',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 14.0
+                                                ),
+                                              ),
+                                              SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                              Text(
+                                                'Calories',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 14.0
+                                                ),
+                                              ),
+                                              SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                              Text(
+                                                'Pace',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 14.0
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          SizedBox(width: MediaQuery.of(context).size.width*0.043,),  
+                                          Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: <Widget>[
+                                              Text(
+                                                '1.3',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 14.0
+                                                ),
+                                              ),
+                                              SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                              Text(
+                                                '42',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 14.0
+                                                ),
+                                              ),
+                                              SizedBox(height: MediaQuery.of(context).size.height*0.013,),
+                                              Text(
+                                                '25.32/km (avg)',
+                                                style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 14.0
+                                                ),
+                                              )
+                                            ],
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(bottom:37.0,left: 8.5),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: <Widget>[
+                                        CircularPercentIndicator(
+                                          radius: 85.0,
+                                          animation: true,
+                                          animationDuration: 1200,
+                                          lineWidth: 4.0,
+                                          percent: 0.8,
+                                          center: GestureDetector(
+                                            onTap: () {
+                                            },
+                                            child: Text(
+                                              '1459',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18.0,
+                                                fontWeight: FontWeight.bold
+                                              ),
+                                            )
+                                          ),
+                                          circularStrokeCap: CircularStrokeCap.butt,
+                                          backgroundColor: Colors.white24,
+                                          progressColor: Colors.yellow,
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    RaisedButton(
-                      elevation: 0.5,
-                      color: btn2?Colors.green:Color(0xffe6f2ff),
-                      shape: RoundedRectangleBorder(
-                        borderRadius:BorderRadius.circular(15.0)
-                      ),
-                      onPressed: () {
-                        if (_pageController.hasClients) {
-                          _pageController.animateToPage(
-                            2,
-                            duration: const Duration(milliseconds: 400),
-                            curve: Curves.easeInOut,
-                          );
-                        }
-                        setState(() {
-                          btn2=true;
-                          btn1=false;btn3=false;
-                        });
-                      }, 
-                      child: Padding(
-                        padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
-                        child: Text(
-                          "Public",
-                          style: TextStyle(
-                            color: btn2? Colors.white:Colors.black,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500
-                        ),
-                        ),
-                      )
-                    ),
-                    RaisedButton(
-                      elevation: 0.5,
-                      color: btn3?Colors.green:Color(0xffe6f2ff),
-                      shape: RoundedRectangleBorder(
-                        borderRadius:BorderRadius.circular(15.0)
-                      ),
-                      onPressed: () {
-                          if (_pageController.hasClients) {
-                            _pageController.animateToPage(
-                              0,
-                              duration: const Duration(milliseconds: 400),
-                              curve: Curves.easeInOut,
-                            );
-                          }
-                          setState(() {
-                            btn3=true;
-                            btn2=false;btn1=false;
-                          });
-                        },  
-                      child: Padding(
-                        padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
-                        child: Text(
-                          "Challenge",
-                          style: TextStyle(
-                            color: btn3? Colors.white:Colors.black,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.w500
-                        ),
-                        ),
-                      )
-                    )
                   ],
                 ),
-                //Home page data
-                ChallengeScreenData(),
-              ],
-            )
-          ),
+              ),
+            ),
+            SizedBox(height:MediaQuery.of(context).size.height*0.03),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(bottom:108.0),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(
+                                Icons.lightbulb_outline,
+                                size: 50.0,
+                                color: Colors.blueAccent,
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: MediaQuery.of(context).size.width*0.035,),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              'How much physical activity do you\nneed?',
+                              style: TextStyle(
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            SizedBox(height:MediaQuery.of(context).size.width*0.02),
+                            Text(
+                              'Move more, Sit less',
+                              style: TextStyle(
+                                color: Colors.deepPurple,
+                                fontWeight: FontWeight.bold
+                              ),
+                            ),
+                            SizedBox(height:MediaQuery.of(context).size.width*0.02),
+                            Text(
+                              'Get up and move throught the day. Any\nactivity is better than none. Even light\n-intensity can offset the serious health risks of\nbeing sedentary.',
+                              style: TextStyle(
+                                color: Colors.black54
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

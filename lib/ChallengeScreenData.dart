@@ -30,7 +30,7 @@ class ChallengeScreenData extends StatelessWidget {
                 "Running",
                 style: TextStyle(
                   fontSize: 16.0,
-                  // fontWeight: FontWeight.w600
+                  fontWeight: FontWeight.bold
                 ),
               ),
             )
@@ -68,7 +68,7 @@ class ChallengeScreenData extends StatelessWidget {
                 "Running",
                 style: TextStyle(
                   fontSize: 16.0,
-                  // fontWeight: FontWeight.w600
+                  fontWeight: FontWeight.bold
                 ),
               ),
             )
@@ -106,7 +106,7 @@ class ChallengeScreenData extends StatelessWidget {
                 "Running",
                 style: TextStyle(
                   fontSize: 16.0,
-                  // fontWeight: FontWeight.w600
+                  fontWeight: FontWeight.bold
                 ),
               ),
             )
