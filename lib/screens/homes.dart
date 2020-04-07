@@ -126,14 +126,14 @@ class _HomeState extends State<Home> {
                         "Abhi Nhi To Kabhi Nhi",
                         style: TextStyle(
                           fontSize: 20.0,
-                          // fontWeight: FontWeight.bold
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                       Text(
                         "Alarm Lagao",
                         style: TextStyle(
                           fontSize: 20.0,
-                          // fontWeight: FontWeight.bold
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                       ///content to be added
@@ -311,7 +311,8 @@ class _HomeState extends State<Home> {
                             "OK",
                             style: TextStyle(
                               fontSize: 19.0,
-                              color: Colors.white
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold
                             ),
                           )
                         ),
@@ -377,7 +378,8 @@ class _HomeState extends State<Home> {
                   ),
                   hintText: '                   Home/Work',
                   hintStyle: TextStyle(
-                    color: Colors.black26
+                    color: Colors.black26,
+                    fontWeight: FontWeight.bold
                   ),
                   suffixIcon: Container(
                     // decoration: BoxDecoration(
@@ -408,13 +410,15 @@ class _HomeState extends State<Home> {
                     Text(
                       "Rank",
                       style: TextStyle(
-                        color: Colors.black87
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold
                       ),
                     ),
                     Text(
                       "2000",
                       style: TextStyle(
-                        color: Colors.black87
+                        color: Colors.black87,
+                        fontWeight: FontWeight.bold
                       ),
                     )
                   ],
@@ -486,14 +490,14 @@ class _HomeState extends State<Home> {
                                     "TOTAL STEPS",
                                     style: TextStyle(
                                       fontSize: 14.0,
-                                      // fontWeight: FontWeight.bold
+                                      fontWeight: FontWeight.bold
                                     ),
                                   ),
                                   Text(
                                     "2Lac",
                                     style: TextStyle(
                                       fontSize: 15.0,
-                                      // fontWeight: FontWeight.bold
+                                      fontWeight: FontWeight.bold
                                     ),
                                   )
                                 ],
@@ -507,14 +511,14 @@ class _HomeState extends State<Home> {
                                     "RANK",
                                     style: TextStyle(
                                       fontSize: 14.0,
-                                      // fontWeight: FontWeight.bold
+                                      fontWeight: FontWeight.bold
                                     ),
                                   ),
                                   Text(
                                     "2000",
                                     style: TextStyle(
                                     fontSize: 15.0,
-                                    // fontWeight: FontWeight.bold
+                                    fontWeight: FontWeight.bold
                                   ),
                                   )
                                 ],
@@ -532,7 +536,8 @@ class _HomeState extends State<Home> {
                 title: Text(
                   "Account",
                   style: TextStyle(
-                    fontSize: 18.0
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: Icon(
@@ -543,7 +548,7 @@ class _HomeState extends State<Home> {
                 children: <Widget>[
                   ListTile(
                     title: Text(
-                      'Privacy Policy'
+                      'Privacy Policy',
                     ),
                     trailing: Icon(
                       Icons.account_balance
@@ -563,7 +568,8 @@ class _HomeState extends State<Home> {
                 title: Text(
                   "My Challenges",
                   style: TextStyle(
-                    fontSize: 18.0
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: Icon(
@@ -576,7 +582,8 @@ class _HomeState extends State<Home> {
                 title: Text(
                   "Support",
                   style: TextStyle(
-                    fontSize: 18.0
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: Icon(
@@ -589,7 +596,8 @@ class _HomeState extends State<Home> {
                 title: Text(
                   "Rewards",
                   style: TextStyle(
-                    fontSize: 18.0
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: Icon(
@@ -602,7 +610,8 @@ class _HomeState extends State<Home> {
                 title: Text(
                   "Referrals",
                   style: TextStyle(
-                    fontSize: 18.0
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: Icon(
@@ -615,7 +624,8 @@ class _HomeState extends State<Home> {
                 title: Text(
                   "Fitness Device",
                   style: TextStyle(
-                    fontSize: 18.0
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: Icon(
@@ -674,6 +684,7 @@ class _HomeState extends State<Home> {
                                   "Instant Challenge",
                                   style: TextStyle(
                                     color: instbtn?Colors.white:Colors.black54,
+                                    fontWeight: FontWeight.bold
                                   ),
                                 ),
                               )
@@ -703,6 +714,7 @@ class _HomeState extends State<Home> {
                                   "Follow friend",
                                   style: TextStyle(
                                     color: follow?Colors.white:Colors.black54,
+                                    fontWeight: FontWeight.bold
                                   ),
                                 ),
                               )
@@ -734,6 +746,7 @@ class _HomeState extends State<Home> {
                                     "Alarm",
                                     style: TextStyle(
                                       color: alarm?Colors.white:Colors.black54,
+                                      fontWeight: FontWeight.bold
                                     ),
                                   ),
                                 ),
@@ -765,7 +778,8 @@ class _HomeState extends State<Home> {
                                         textAlign: TextAlign.end,
                                         style: TextStyle(
                                           color: Colors.black87,
-                                          decoration: TextDecoration.underline
+                                          decoration: TextDecoration.underline,
+                                          fontWeight: FontWeight.bold
                                         ),
                                       ),
                                       // Divider(
@@ -895,7 +909,8 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                           color: Colors.black54,
                           fontSize: 18.0,
-                          decoration: TextDecoration.underline
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                     ),
@@ -913,7 +928,8 @@ class _HomeState extends State<Home> {
                         style: TextStyle(
                           color: Colors.black54,
                           fontSize: 18.0,
-                          decoration: TextDecoration.underline
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold
                         ),
                       ),
                     ),

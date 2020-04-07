@@ -1,5 +1,10 @@
+import 'package:fitnesstracker2020/screens/challengeScreen.dart';
 import 'package:fitnesstracker2020/screens/homes.dart';
-import 'package:fitnesstracker2020/screens/ChallengeScreen.dart';
+import 'package:fitnesstracker2020/screens/Screen2.dart';
+import 'package:fitnesstracker2020/screens/instantChallenge.dart';
+import 'package:fitnesstracker2020/screens/instantChallengeScreen.dart';
+import 'package:fitnesstracker2020/screens/retryOdd.dart';
+import 'package:fitnesstracker2020/screens/retryScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 
@@ -34,8 +39,8 @@ class _DashboardState extends State<Dashboard> {
           children: <Widget>[
             Home(),
             Challenge(),
-            Center(child:Text("data 1")),
-            Center(child:Text("data 2")),
+            RetryOdd(),
+            ChallengeScreen(),
           ],
           onPageChanged: (int index){
             setState(() {
@@ -68,6 +73,9 @@ class _DashboardState extends State<Dashboard> {
             ),
             title: Text(
               'Home',
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
             ),
           ),
           BottomNavigationBarItem(
@@ -76,6 +84,9 @@ class _DashboardState extends State<Dashboard> {
             ),
             title: Text(
               'Challenge',
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
             ),
           ),
           BottomNavigationBarItem(
@@ -84,6 +95,9 @@ class _DashboardState extends State<Dashboard> {
             ),
             title: Text(
               'Rewards',
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
             ),
           ),
           BottomNavigationBarItem(
@@ -92,6 +106,9 @@ class _DashboardState extends State<Dashboard> {
             ),
             title: Text(
               'Music',
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              ),
             ),
           ),
         ]
