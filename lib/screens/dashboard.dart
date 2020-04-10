@@ -7,6 +7,7 @@ import 'package:fitnesstracker2020/screens/retryOdd.dart';
 import 'package:fitnesstracker2020/screens/retryScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:fitnesstracker2020/icons/my_flutter_app_icons.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -39,7 +40,7 @@ class _DashboardState extends State<Dashboard> {
           children: <Widget>[
             Home(),
             Challenge(),
-            RetryOdd(),
+            InstantChallengeScreen(),
             ChallengeScreen(),
           ],
           onPageChanged: (int index){
@@ -69,7 +70,7 @@ class _DashboardState extends State<Dashboard> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.home,
+              MyFlutterApp.home__1_,
             ),
             title: Text(
               'Home',
@@ -80,7 +81,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.whatshot,
+              MyFlutterApp.challenge__1_,
             ),
             title: Text(
               'Challenge',
@@ -102,7 +103,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.graphic_eq,
+              MyFlutterApp.music,
             ),
             title: Text(
               'Music',

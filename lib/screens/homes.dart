@@ -1,4 +1,5 @@
 import 'package:fitnesstracker2020/presentation/payment/friends.dart';
+import 'package:fitnesstracker2020/screens/profile.dart';
 import "package:flutter/material.dart";
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -442,9 +443,14 @@ class _HomeState extends State<Home> {
                       Row(
                         children: <Widget>[
                           SizedBox(width:2.0),
-                          CircleAvatar(
-                            radius: 35.0,
-                            backgroundImage: AssetImage('assets/user_placeholder.png'),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Profile()));
+                            },
+                            child: CircleAvatar(
+                              radius: 35.0,
+                              backgroundImage: AssetImage('assets/user_placeholder.png'),
+                            ),
                           ),
                           SizedBox(width:8.0),
                           LinearPercentIndicator(
@@ -620,19 +626,37 @@ class _HomeState extends State<Home> {
                   color: Colors.black
                 ),
               ),
-              ListTile(
+              ExpansionTile(
                 title: Text(
-                  "Fitness Device",
+                  "Fitness Devices",
                   style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.bold
                   ),
                 ),
                 trailing: Icon(
-                  Icons.fitness_center,
+                  Icons.account_box,
                   size: 28.0,
-                  color: Colors.black,
+                  color: Colors.black
                 ),
+                children: <Widget>[
+                  ListTile(
+                    title: Text(
+                      'Google Fit',
+                    ),
+                    trailing: Icon(
+                      Icons.account_balance
+                    ),
+                  ),
+                  ListTile(
+                    title: Text(
+                      'Fitbit'
+                    ),
+                    trailing: Icon(
+                      Icons.account_balance
+                    ),
+                  )
+                ],
               ),
             ],
           ),

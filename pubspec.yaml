@@ -74,6 +74,9 @@ flutter:
     - family: Celias
       fonts:
         - asset: assets/fonts/Celias W05 Regular.ttf
+    - family:  MyFlutterApp
+      fonts:
+        - asset: assets/fonts/MyFlutterApp.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
