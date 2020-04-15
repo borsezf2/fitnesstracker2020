@@ -1,13 +1,8 @@
-import 'package:fitnesstracker2020/screens/challengeScreen.dart';
+import 'package:fitnesstracker2020/deviceInformation.dart';
 import 'package:fitnesstracker2020/screens/homes.dart';
 import 'package:fitnesstracker2020/screens/Screen2.dart';
-import 'package:fitnesstracker2020/screens/instantChallenge.dart';
 import 'package:fitnesstracker2020/screens/instantChallengeScreen.dart';
-import 'package:fitnesstracker2020/screens/retryOdd.dart';
-import 'package:fitnesstracker2020/screens/retryScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
-import 'package:fitnesstracker2020/icons/my_flutter_app_icons.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -41,7 +36,7 @@ class _DashboardState extends State<Dashboard> {
             Home(),
             Challenge(),
             InstantChallengeScreen(),
-            ChallengeScreen(),
+            DeviceInformation(),
           ],
           onPageChanged: (int index){
             setState(() {
@@ -70,7 +65,7 @@ class _DashboardState extends State<Dashboard> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(
-              MyFlutterApp.home__1_,
+              Icons.home,
             ),
             title: Text(
               'Home',
@@ -81,7 +76,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              MyFlutterApp.challenge__1_,
+              Icons.whatshot
             ),
             title: Text(
               'Challenge',
@@ -103,7 +98,7 @@ class _DashboardState extends State<Dashboard> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              MyFlutterApp.music,
+              Icons.music_note,
             ),
             title: Text(
               'Music',
@@ -115,39 +110,5 @@ class _DashboardState extends State<Dashboard> {
         ]
       ),
     );
-    //   bottomNavigationBar: SafeArea(
-
-    //     child: BottomNavyBar(
-    //       selectedIndex: _currentIndex,
-    //       showElevation: true, // use this to remove appBar's elevation
-    //       onItemSelected: (index) {
-    //         setState(() => _currentIndex = index);
-    //         _pageController.jumpToPage(index);
-    //       },
-    //       items: [
-    //         BottomNavyBarItem(
-    //           icon: Icon(Icons.home),
-    //           title: Text('  Home',),
-    //           activeColor: Colors.blueAccent,
-    //         ),
-    //         BottomNavyBarItem(
-    //             icon: Icon(Icons.whatshot),
-    //             title: Text('  Challange'),
-    //             activeColor: Colors.purpleAccent
-    //         ),
-    //         BottomNavyBarItem(
-    //             icon: Icon(Icons.card_giftcard),
-    //             title: Text('  Reward'),
-    //             activeColor: Colors.pink
-    //         ),
-    //         BottomNavyBarItem(
-    //             icon: Icon(Icons.music_note),
-    //             title: Text('  Music'),
-    //             activeColor: Colors.green
-    //         ),
-    //       ],
-    //     ),
-    //   )
-    // );
   }
 }

@@ -30,6 +30,8 @@ dependencies:
   charts_flutter:
   percent_indicator: ^2.1.1+1
   flutter_svg: ^0.17.3+1
+  share: ^0.6.3+6
+  device_info: ^0.4.2+1
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +58,13 @@ flutter:
     - assets/alarm-clock.gif
     - assets/bike.svg
     - assets/run.svg
+    - assets/user.svg
+    - assets/alarm-line.svg
+    - assets/flashlight.svg
+    - assets/rewards.svg
+    - assets/personal.svg
+    - assets/personal2.svg
+    - assets/share.svg
     - assets/reward1.png
     - assets/reward2.png
 

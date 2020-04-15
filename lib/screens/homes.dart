@@ -2,6 +2,7 @@ import 'package:fitnesstracker2020/presentation/payment/friends.dart';
 import 'package:fitnesstracker2020/screens/profile.dart';
 import "package:flutter/material.dart";
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class Home extends StatefulWidget {
@@ -100,232 +101,285 @@ class _HomeState extends State<Home> {
     );
 
     void _showDialog(){
-      showDialog<Null>(
+      showDialog(
         context: context,
-        barrierDismissible: false,
+        // barrierDismissible: true,
         builder: (BuildContext context){
-          return SingleChildScrollView(
-            child: Dialog(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(22.0)
-              ),
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    // stops: [0.9,0.4],
-                    colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
-                  )          
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(height:25.0),
-                      Text(
-                        "Abhi Nhi To Kabhi Nhi",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      Text(
-                        "Alarm Lagao",
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                      ///content to be added
-                      SizedBox(
-                        child: Image.asset('assets/alarm-clock.gif'),
-                      ),
-                      SizedBox(height:20.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            width: 140.0,
-                            height: 30.0,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.blue
-                              )
-                            ),
-                          ),
-                          SizedBox(width:20.0),
-                          Container(
-                            width: 80.0,
-                            height: 30.0,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: Colors.blue
-                              )
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(height:10.0),
-                      Divider(
-                        thickness: 0.75,
-                        color: Colors.black54,
-                      ),
-                      Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: <Widget>[
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width,
-                                child: Align(
-                                  alignment: Alignment.centerRight,
-                                  child: Icon(
-                                    Icons.arrow_forward,
-                                    size: 32.0,
-                                  ),
-                                )
-                              ),
-                              SingleChildScrollView(
-                                scrollDirection: Axis.horizontal,
-                                child: Row(
-                                  children: <Widget>[
-                                    Container(
-                                      width: 82.0,
-                                      height: 82.0,
-                                      child: Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                          side: BorderSide(
-                                            color: Color(0xff119F72)
-                                          )
-                                        ),
-                                        child: Image.asset('assets/reward1.png'),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 82.0,
-                                      height: 82.0,
-                                      child: Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                          side: BorderSide(
-                                            color: Color(0xff119F72)
-                                          )
-                                        ),
-                                        child: Image.asset('assets/reward1.png'),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 82.0,
-                                      height: 82.0,
-                                      child: Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                          side: BorderSide(
-                                            color: Color(0xff119F72)
-                                          )
-                                        ),
-                                        child: Image.asset('assets/reward1.png'),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 82.0,
-                                      height: 82.0,
-                                      child: Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                          side: BorderSide(
-                                            color: Color(0xff119F72)
-                                          )
-                                        ),
-                                        child: Image.asset('assets/reward1.png'),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 82.0,
-                                      height: 82.0,
-                                      child: Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                          side: BorderSide(
-                                            color: Color(0xff119F72)
-                                          )
-                                        ),
-                                        child: Image.asset('assets/reward1.png'),
-                                      ),
-                                    ),
-                                    Container(
-                                      width: 82.0,
-                                      height: 82.0,
-                                      child: Card(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                          side: BorderSide(
-                                            color: Color(0xff119F72)
-                                          )
-                                        ),
-                                        child: Image.asset('assets/reward1.png'),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      SizedBox(height:15.0),
-                      TextField(
-                        controller: _searchController,
-                        decoration: InputDecoration(
-                          contentPadding: EdgeInsets.symmetric(horizontal: 6.0),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                          ),
-                          hintText: "Enter text",
-                          filled: true,
-                          fillColor: Colors.white,
-                          focusColor: Colors.white,
-                          hoverColor: Colors.white
-                        ),
-                      ),
-                      SizedBox(height:40.0),
-                      Container(
-                        width: 120.0,
-                        height: 40.0,
-                        child: RaisedButton(
-                          color: Colors.blueAccent,
-                          shape: RoundedRectangleBorder(
-                            side: BorderSide(
-                              color: Colors.blueAccent
-                            ),
-                            borderRadius: BorderRadius.circular(22.0)
-                          ),
-                          onPressed: (){
-                            Navigator.of(context).pop();
-                          }, 
-                          child: Text(
-                            "OK",
-                            style: TextStyle(
-                              fontSize: 19.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold
-                            ),
-                          )
-                        ),
-                      ),
-                      SizedBox(height:30.0),
-                    ],
-                  ),
-                ),
-              )
+          return Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.0),
             ),
+            child: Container(
+              height: MediaQuery.of(context).size.height*0.69,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12.0),
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  // stops: [0.9,0.4],
+                  colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+                )          
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left:10.0,right: 10.0),
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(height:25.0),
+                    Text(
+                      "Abhi Nhi To Kabhi Nhi",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    Text(
+                      "Alarm Lagao",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    ///content to be added
+                    SizedBox(
+                      child: Image.asset('assets/alarm-clock.gif'),
+                    ),
+                    SizedBox(height:20.0),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Container(
+                          width: 140.0,
+                          height: 30.0,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blue
+                            )
+                          ),
+                        ),
+                        SizedBox(width:20.0),
+                        Container(
+                          width: 80.0,
+                          height: 30.0,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blue
+                            )
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(height:10.0),
+                    Divider(
+                      thickness: 0.75,
+                      color: Colors.black54,
+                    ),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: <Widget>[
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child: Icon(
+                                  Icons.arrow_forward,
+                                  size: 32.0,
+                                ),
+                              )
+                            ),
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: <Widget>[
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 82.0,
+                                    height: 82.0,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                        side: BorderSide(
+                                          color: Color(0xff119F72)
+                                        )
+                                      ),
+                                      child: Image.asset('assets/reward1.png'),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(height:15.0),
+                    TextField(
+                      controller: _searchController,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(horizontal: 6.0),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                        ),
+                        hintText: "Enter text",
+                        filled: true,
+                        fillColor: Colors.white,
+                        focusColor: Colors.white,
+                        hoverColor: Colors.white
+                      ),
+                    ),
+                    SizedBox(height:40.0),
+                    Container(
+                      width: 120.0,
+                      height: 40.0,
+                      child: RaisedButton(
+                        color: Colors.blueAccent,
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            color: Colors.blueAccent
+                          ),
+                          borderRadius: BorderRadius.circular(22.0)
+                        ),
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        }, 
+                        child: Text(
+                          "OK",
+                          style: TextStyle(
+                            fontSize: 19.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold
+                          ),
+                        )
+                      ),
+                    ),
+                    SizedBox(height:30.0),
+                  ],
+                ),
+              ),
+            )
           );
         }
+      );
+    }
+
+    void _logoutdialog(){
+      showDialog(
+        context: context,
+        child: Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Container(
+            height: MediaQuery.of(context).size.height*0.14,
+            child: Padding(
+              padding: const EdgeInsets.only(left:10.0,right: 10.0),
+              child: Padding(
+                padding: const EdgeInsets.only(top:8.0),
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'Do you want to log out?',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    SizedBox(height: MediaQuery.of(context).size.height*0.02,),
+                    Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: RaisedButton(
+                            onPressed:(){},
+                            child: Text(
+                              'Yes',
+                            ), 
+                          ),
+                        ),
+                        SizedBox(width: MediaQuery.of(context).size.width*0.02,),
+                        Expanded(
+                          child: RaisedButton(
+                            onPressed:(){},
+                            child: Text(
+                              'No',
+                            ), 
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        )
       );
     }
 
@@ -350,15 +404,14 @@ class _HomeState extends State<Home> {
             ),
             leading: Builder(
               builder: (BuildContext context) {
-                return IconButton(
-                  icon:Icon(
-                    Icons.person,
-                    color:Colors.black38,
-                    size: 32.0,
-                  ),
-                  onPressed: (){
+                return GestureDetector(
+                  onTap: (){
                     Scaffold.of(context).openDrawer();
-                  } 
+                  },
+                  child: SvgPicture.asset(
+                    'assets/personal.svg',
+                    height: 15.0,width: 15.0,
+                  )
                 );
               }
             ),
@@ -606,11 +659,10 @@ class _HomeState extends State<Home> {
                     fontWeight: FontWeight.bold
                   ),
                 ),
-                trailing: Icon(
-                  Icons.card_giftcard,
-                  size: 28.0,
-                  color: Colors.black
-                ),
+                trailing: SvgPicture.asset(
+                  'assets/rewards.svg',
+                  width: 28.0,height: 28.0,
+                )
               ),
               ListTile(
                 title: Text(
@@ -620,10 +672,9 @@ class _HomeState extends State<Home> {
                     fontWeight: FontWeight.bold
                   ),
                 ),
-                trailing: Icon(
-                  Icons.account_box,
-                  size: 28.0,
-                  color: Colors.black
+                trailing: SvgPicture.asset(
+                  'assets/share.svg',
+                  width: 28.0,height: 28.0,
                 ),
               ),
               ExpansionTile(
@@ -658,6 +709,23 @@ class _HomeState extends State<Home> {
                   )
                 ],
               ),
+              GestureDetector(
+                onTap: _logoutdialog,
+                child: ListTile(
+                  title: Text(
+                    "Log out",
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                  trailing: Icon(
+                    Icons.lock_open,
+                    size: 28.0,
+                    color: Colors.black
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -686,9 +754,9 @@ class _HomeState extends State<Home> {
                         children: <Widget>[
                           Column(
                             children: <Widget>[
-                              Image.asset(
-                                'assets/quick.gif',
-                                width: 28.0,
+                              SvgPicture.asset(
+                                'assets/flashlight.svg',
+                                width: 28.0,height: 28.0,
                               ),
                               RaisedButton(
                                 color: instbtn?Color(0xff119F72):Colors.white,
@@ -716,9 +784,9 @@ class _HomeState extends State<Home> {
                           ),
                           Column(
                             children: <Widget>[
-                              Icon(
-                                Icons.person_add,
-                                size: 28.0,
+                              SvgPicture.asset(
+                                'assets/personal2.svg',
+                                width: 28.0,height: 28.0,
                               ),
                               RaisedButton(
                                 color: follow?Color(0xff119F72):Colors.white,
@@ -746,9 +814,9 @@ class _HomeState extends State<Home> {
                           ),
                           Column(
                             children: <Widget>[
-                              Image.asset(
-                                'assets/alarm-clock.gif',
-                                width: 28.0,
+                              SvgPicture.asset(
+                                'assets/alarm-line.svg',
+                                width: 28.0,height: 28.0,
                               ),
                               GestureDetector(
                                 onTap: () {

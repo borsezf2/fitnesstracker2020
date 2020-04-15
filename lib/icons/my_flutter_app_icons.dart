@@ -21,7 +21,8 @@ class MyFlutterApp {
   static const _kFontFam = 'MyFlutterApp';
   static const _kFontPkg = null;
 
-  static const IconData music = const IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData home__1_ = const IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData challenge__1_ = const IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData run = const IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData settings = const IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData settings2 = const IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData bike = const IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

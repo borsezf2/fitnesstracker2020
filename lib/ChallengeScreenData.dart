@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ChallengeScreenData extends StatelessWidget {
 
@@ -18,10 +19,7 @@ class ChallengeScreenData extends StatelessWidget {
               child: Container(
                 height: 78.0,
                 width: 100.0,
-                child: Icon(
-                  Icons.ac_unit,
-                  size: 80.0,
-                ),
+                child: SvgPicture.asset('assets/run.svg')
               ),
             ),
             Padding(
@@ -118,22 +116,24 @@ class ChallengeScreenData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: _widget1(3)
-          ),
-          Column(
-            children: _widget2(3)
-          ),
-          Column(
-            children: _widget3(3)
-          )
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: _widget1(3)
+            ),
+            Column(
+              children: _widget2(3)
+            ),
+            Column(
+              children: _widget3(3)
+            )
+          ],
+        ),
       ),
     );
   }
