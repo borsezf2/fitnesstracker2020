@@ -194,19 +194,21 @@ class _ChallengeState extends State<Challenge> {
               ),
               //Home page data
               // ChallengeScreenData(),
-              Expanded(
-                child: PageView(
-                  scrollDirection: Axis.horizontal,
-                  controller: _pageController,
-                  children: <Widget>[
-                    ChallengeScreenData(),
-                    InstantChallengeData(),
-                  ],
-                  onPageChanged: (int index){
-                    setState(() {
-                      _index = index;
-                    });
-                  },
+              Container(
+                child: Expanded(
+                  child: PageView(
+                    scrollDirection: Axis.horizontal,
+                    controller: _pageController,
+                    children: <Widget>[
+                      ChallengeScreenData(),
+                      InstantChallengeData(),
+                    ],
+                    onPageChanged: (int index){
+                      setState(() {
+                        _index = index;
+                      });
+                    },
+                  ),
                 ),
               ),
             ],

@@ -1,3 +1,4 @@
+import 'package:fitnesstracker2020/alarm.dart';
 import 'package:fitnesstracker2020/deviceInformation.dart';
 import 'package:fitnesstracker2020/screens/homes.dart';
 import 'package:fitnesstracker2020/screens/Screen2.dart';
@@ -36,7 +37,7 @@ class _DashboardState extends State<Dashboard> {
             Home(),
             Challenge(),
             InstantChallengeScreen(),
-            DeviceInformation(),
+            Center(child: Text('data'),),
           ],
           onPageChanged: (int index){
             setState(() {

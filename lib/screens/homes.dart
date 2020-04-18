@@ -1,4 +1,5 @@
-import 'package:fitnesstracker2020/presentation/payment/friends.dart';
+// import 'package:fitnesstracker2020/presentation/payment/friends.dart';
+import 'package:fitnesstracker2020/screens/paymentEntry.dart';
 import 'package:fitnesstracker2020/screens/profile.dart';
 import "package:flutter/material.dart";
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -22,8 +23,10 @@ class ClicksPerYear {
 TextEditingController _searchController=TextEditingController();
 
 class _HomeState extends State<Home> {
+  
   bool weekly;
   bool instbtn,follow,alarm;
+
   @override
   void initState() {
     instbtn=false;
@@ -771,6 +774,7 @@ class _HomeState extends State<Home> {
                                     instbtn=true;
                                     follow=false;alarm=false;
                                   });
+                                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>PaymentEntry()));
                                 },
                                 child: Text(
                                   "Instant Challenge",
