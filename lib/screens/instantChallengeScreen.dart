@@ -115,69 +115,10 @@ class _InstantChallengeScreenState extends State<InstantChallengeScreen> {
                                                   )
                                                 ],
                                               ),
-                                              // SizedBox(width: MediaQuery.of(context).size.width*0.043,),  
-                                              // Column(
-                                              //   crossAxisAlignment: CrossAxisAlignment.start,
-                                              //   children: <Widget>[
-                                              //     Text(
-                                              //       '1.3',
-                                              //       style: TextStyle(
-                                              //         color: Colors.white54,
-                                              //         fontSize: 14.0
-                                              //       ),
-                                              //     ),
-                                              //     SizedBox(height: MediaQuery.of(context).size.height*0.013,),
-                                              //     Text(
-                                              //       '42',
-                                              //       style: TextStyle(
-                                              //         color: Colors.white54,
-                                              //         fontSize: 14.0
-                                              //       ),
-                                              //     ),
-                                              //     SizedBox(height: MediaQuery.of(context).size.height*0.013,),
-                                              //     Text(
-                                              //       '25.32/km (avg)',
-                                              //       style: TextStyle(
-                                              //         color: Colors.white54,
-                                              //         fontSize: 14.0
-                                              //       ),
-                                              //     )
-                                              //   ],
-                                              // )
                                             ],
                                           )
                                         ],
                                       ),
-                                      // Padding(
-                                      //   padding: const EdgeInsets.only(bottom:37.0,left: 8.5),
-                                      //   child: Column(
-                                      //     mainAxisAlignment: MainAxisAlignment.start,
-                                      //     children: <Widget>[
-                                      //       CircularPercentIndicator(
-                                      //         radius: 85.0,
-                                      //         animation: true,
-                                      //         animationDuration: 1200,
-                                      //         lineWidth: 4.0,
-                                      //         percent: 0.8,
-                                      //         center: GestureDetector(
-                                      //           onTap: () {
-                                      //           },
-                                      //           child: Text(
-                                      //             '1330',
-                                      //             style: TextStyle(
-                                      //               color: Colors.white,
-                                      //               fontSize: 18.0,
-                                      //               fontWeight: FontWeight.bold
-                                      //             ),
-                                      //           )
-                                      //         ),
-                                      //         circularStrokeCap: CircularStrokeCap.butt,
-                                      //         backgroundColor: Colors.white24,
-                                      //         progressColor: Colors.orange,
-                                      //       )
-                                      //     ],
-                                      //   ),
-                                      // )
                                     ],
                                   ),
                                 ),
@@ -192,7 +133,7 @@ class _InstantChallengeScreenState extends State<InstantChallengeScreen> {
                           ),
                           height: MediaQuery.of(context).size.height*0.055,
                           child: Padding(
-                            padding: const EdgeInsets.only(left:30.0,right: 30.0),
+                            padding: const EdgeInsets.only(left:28.0,right: 28.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
@@ -206,20 +147,8 @@ class _InstantChallengeScreenState extends State<InstantChallengeScreen> {
                                     text: 'Few seconds away from exciting fitness journey',
                                     style: TextStyle(
                                       color: Colors.white54,
-                                      fontSize: 13.0
+                                      fontSize: 11.0
                                     ),
-                                    // children: <TextSpan>[
-                                    //   TextSpan(
-                                    //     text: '120 steps ',
-                                    //     style: TextStyle(
-                                    //       color: Colors.white,
-                                    //       fontWeight: FontWeight.bold
-                                    //     )
-                                    //   ),
-                                    //   TextSpan(
-                                    //     text: 'away from others'
-                                    //   )
-                                    // ]
                                   ) 
                                 )
                               ],
@@ -307,9 +236,15 @@ class _InstantChallengeScreenState extends State<InstantChallengeScreen> {
             SizedBox(height:MediaQuery.of(context).size.height*0.2),
             Container(
               width: 120.0,
-              height: 60.0,
+              height: 50.0,
               child: RaisedButton(
-                color: Colors.blueAccent,
+                color: Color(0xff119F72),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  side: BorderSide(
+                    color: Color(0xff119F72)
+                  )
+                ),
                 onPressed:(){},
                 child: Text(
                   'Join',

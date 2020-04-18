@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.62 86.9">
+  <defs>
+    <style>
+      .cls-1{fill:none;stroke:#686b6b;stroke-miterlimit:10;stroke-width:4.5px}
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="30.45" cy="79.74" rx="7.93" ry="4.92"/>
+  <ellipse class="cls-1" cx="30.43" cy="79.74" rx="7.93" ry="4.92"/>
+  <path class="cls-1" d="M42.87 9.5s5.65 9.12-9 16.55c0 0-24 12.35-.77 19l11 3c.31.09.59-.16.38-.34-3.2-2.79-12.68-11.8 4.52-19.22 2.26-1 19.22-8.78-6.13-18.99z" transform="translate(-17.32 -4.85)"/>
+  <path class="cls-1" d="M61.13 48.28a9.18 9.18 0 01-4.71-1.34c-4.54-2.5-11.17-9.16 4.71-13.79 0 0 13.42-4.54 7.32-11.35 0 0 31.92 21.98-7.32 26.48z" transform="translate(-17.32 -4.85)"/>
+  <path class="cls-1" d="M49.97 50.24H12.15l-6.1-5.3h51.24l-7.32 5.3z"/>
+  <path class="cls-1" d="M49.95 50.24H12.13l-6.1-5.3h51.24l-7.32 5.3zM37.16 77.09l3.66-24.96H21.3l3.05 24.58"/>
+  <path class="cls-1" d="M37.14 77.09l3.66-24.96H21.27l3.05 24.58"/>
+</svg>

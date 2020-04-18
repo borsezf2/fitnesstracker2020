@@ -64,6 +64,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                                     borderRadius: BorderRadius.circular(22.0)
                                   ),
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: <Widget>[
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,7 +142,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: const EdgeInsets.only(bottom:37.0,left: 8.5),
+                                        padding: const EdgeInsets.only(bottom:37.0),
                                         child: Column(
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           children: <Widget>[
@@ -247,6 +248,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                                 borderRadius: BorderRadius.circular(22.0)
                               ),
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -324,7 +326,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                                     ],
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(bottom:37.0,left: 8.5),
+                                    padding: const EdgeInsets.only(bottom:37.0),
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: <Widget>[
@@ -385,7 +387,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                             ],
                           ),
                         ),
-                        SizedBox(width: MediaQuery.of(context).size.width*0.035,),
+                        SizedBox(width: MediaQuery.of(context).size.width*0.03,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
@@ -406,7 +408,7 @@ class _ChallengeScreenState extends State<ChallengeScreen> {
                             ),
                             SizedBox(height:MediaQuery.of(context).size.width*0.02),
                             Text(
-                              'Get up and move throught the day. Any\nactivity is better than none. Even light\n-intensity can offset the serious health risks of\nbeing sedentary.',
+                              'Get up and move throught the day. Any\nactivity is better than none. Even light\n-intensity can offset the serious health risks\n of being sedentary.',
                               style: TextStyle(
                                 color: Colors.black54
                               ),

@@ -30,6 +30,10 @@ dependencies:
   charts_flutter:
   percent_indicator: ^2.1.1+1
   flutter_svg: ^0.17.3+1
+  share: ^0.6.3+6
+  device_info: ^0.4.2+1
+  android_alarm_manager: ^0.4.5+8
+  shared_preferences: ^0.5.6+3
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +60,13 @@ flutter:
     - assets/alarm-clock.gif
     - assets/bike.svg
     - assets/run.svg
+    - assets/user.svg
+    - assets/alarm-line.svg
+    - assets/flashlight.svg
+    - assets/rewards.svg
+    - assets/personal.svg
+    - assets/personal2.svg
+    - assets/share.svg
     - assets/reward1.png
     - assets/reward2.png
 
@@ -74,6 +85,9 @@ flutter:
     - family: Celias
       fonts:
         - asset: assets/fonts/Celias W05 Regular.ttf
+    - family:  MyFlutterApp
+      fonts:
+        - asset: assets/fonts/MyFlutterApp.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
