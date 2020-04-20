@@ -865,30 +865,24 @@ class _HomeState extends State<Home> {
                         child: Column(
                           children: <Widget>[
                             SizedBox(
-                              width: MediaQuery.of(context).size.width,
+                              width: width,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[
-                                  Column(
-                                    children: <Widget>[
-                                      Text(
-                                        'more ',
-                                        textAlign: TextAlign.end,
-                                        style: TextStyle(
-                                          color: Colors.black87,
-                                          decoration: TextDecoration.underline,
-                                          fontWeight: FontWeight.bold
-                                        ),
-                                      ),
-                                      // Divider(
-                                      //   thickness: 1.0,
-                                      //   color: Colors.black12,
-                                      // ),
-                                    ],
+                                  Text(
+                                    'more ',
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                      color: Colors.black87,
+                                      decoration: TextDecoration.underline,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0
+                                    ),
                                   ),
+                                  SizedBox(width:width*0.005),
                                   Icon(
                                     Icons.arrow_forward,
-                                    size: 25.0,
+                                    size: 15.0,
                                     color: Colors.black87,
                                   )
                                 ],
