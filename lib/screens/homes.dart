@@ -1,4 +1,3 @@
-// import 'package:fitnesstracker2020/presentation/payment/friends.dart';
 import 'package:fitnesstracker2020/screens/paymentEntry.dart';
 import 'package:fitnesstracker2020/screens/profile.dart';
 import "package:flutter/material.dart";
@@ -385,6 +384,9 @@ class _HomeState extends State<Home> {
         )
       );
     }
+
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -892,84 +894,84 @@ class _HomeState extends State<Home> {
                                 ],
                               ),
                             ),
-                            // SizedBox(height:5.0),
+                            SizedBox(height:height*0.01),
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
                                 children: <Widget>[
                                   Container(
-                                    width: 82.0,
-                                    height: 82.0,
+                                    width: width*0.205,
+                                    height: height*0.1105,
                                     child: Card(
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                         side: BorderSide(
-                                          color: Color(0xff119F72)
+                                          color: Color.fromRGBO(1, 4, 4, 0.3)
                                         )
                                       ),
                                       child: Image.asset('assets/reward1.png'),
                                     ),
                                   ),
                                   Container(
-                                    width: 82.0,
-                                    height: 82.0,
+                                    width: width*0.205,
+                                    height: height*0.1105,
                                     child: Card(
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                         side: BorderSide(
-                                          color: Color(0xff119F72)
+                                          color: Color.fromRGBO(1, 4, 4, 0.3)
                                         )
                                       ),
                                       child: Image.asset('assets/reward1.png'),
                                     ),
                                   ),
                                   Container(
-                                    width: 82.0,
-                                    height: 82.0,
+                                    width: width*0.205,
+                                    height: height*0.1105,
                                     child: Card(
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                         side: BorderSide(
-                                          color: Color(0xff119F72)
+                                          color: Color.fromRGBO(1, 4, 4, 0.3)
                                         )
                                       ),
                                       child: Image.asset('assets/reward1.png'),
                                     ),
                                   ),
                                   Container(
-                                    width: 82.0,
-                                    height: 82.0,
+                                    width: width*0.205,
+                                    height: height*0.1105,
                                     child: Card(
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                         side: BorderSide(
-                                          color: Color(0xff119F72)
+                                          color: Color.fromRGBO(1, 4, 4, 0.3)
                                         )
                                       ),
                                       child: Image.asset('assets/reward1.png'),
                                     ),
                                   ),
                                   Container(
-                                    width: 82.0,
-                                    height: 82.0,
+                                    width: width*0.205,
+                                    height: height*0.1105,
                                     child: Card(
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                         side: BorderSide(
-                                          color: Color(0xff119F72)
+                                          color: Color.fromRGBO(1, 4, 4, 0.3)
                                         )
                                       ),
                                       child: Image.asset('assets/reward1.png'),
                                     ),
                                   ),
                                   Container(
-                                    width: 82.0,
-                                    height: 82.0,
+                                    width: width*0.205,
+                                    height: height*0.1105,
                                     child: Card(
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                                         side: BorderSide(
-                                          color: Color(0xff119F72)
+                                          color: Color.fromRGBO(1, 4, 4, 0.3)
                                         )
                                       ),
                                       child: Image.asset('assets/reward1.png'),
@@ -982,6 +984,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+                    SizedBox(height:height*0.005),
                     Divider(
                       thickness: 1.0,
                       color: Colors.black12,
@@ -989,10 +992,29 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-              // SizedBox(height:20.0),
+              SizedBox(height:height*0.02),
               Row(
                 children: <Widget>[
-                  SizedBox(width:30.0),
+                  SizedBox(width:width*0.08),
+                  GestureDetector(
+                    onTap: () {
+                      // setState(() {
+                      //   weekly = true;
+                      // });
+                    },
+                    child: Center(
+                      child: Text(
+                        "Stats",
+                        style: TextStyle(
+                          color: Colors.black54,
+                          fontSize: 18.0,
+                          decoration: TextDecoration.underline,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width:width*0.05),
                   GestureDetector(
                     onTap: () {
                       setState(() {
@@ -1011,7 +1033,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
-                  SizedBox(width:30.0),
+                  SizedBox(width:width*0.05),
                   GestureDetector(
                     onTap: () {
                       setState(() {
@@ -1032,8 +1054,9 @@ class _HomeState extends State<Home> {
                   ),
                 ]
               ),
+              SizedBox(height:height*0.01),
               Container(
-                height: 250,
+                height: height*0.35,
                 // color: Colors.blue,
                 child:weekly ? chartWidgetWeek : chartWidgetMonth
               )

@@ -84,7 +84,7 @@ flutter:
   fonts:
     - family: Celias
       fonts:
-        - asset: assets/fonts/Celias W05 Regular.ttf
+        - asset: assets/fonts/Celias-W05-Regular.ttf
     - family:  MyFlutterApp
       fonts:
         - asset: assets/fonts/MyFlutterApp.ttf
