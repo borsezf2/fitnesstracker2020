@@ -12,8 +12,8 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
     return List.generate(
       count, 
       (index) => Container(
-        width: 110.0,
-        height: 162.0,
+        width: 120.0,
+        height: 156.0,
         child: Card(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(10.0))
@@ -23,15 +23,15 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 5.0,right: 5.0),
+                padding: const EdgeInsets.only(top:18.0,bottom: 8.0,left: 5.0,right: 5.0),
                 child: Container(
-                  height: 70.0,
-                  width: 70.0,
+                  height: 50.0,
+                  width: 50.0,
                   child: SvgPicture.asset('assets/run.svg')
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8.0,top: 4.0),
+                padding: const EdgeInsets.only(bottom: 8.0,top: 8.0),
                 child: Text(
                   "Running",
                   style: TextStyle(
@@ -42,7 +42,7 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
               ),
               Container(
                 height: 40.0,
-                width: 110.0,
+                width: 120.0,
                 child: RaisedButton(
                   color: Colors.black54,
                   shape: RoundedRectangleBorder(
@@ -69,8 +69,8 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
     return List.generate(
       count, 
       (index) => Container(
-        width: 110.0,
-        height: 162.0,
+        width: 120.0,
+        height: 156.0,
         child: Card(
           elevation: 0.0,
           shape: RoundedRectangleBorder(
@@ -80,15 +80,15 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 5.0,right: 5.0),
+                padding: const EdgeInsets.only(top:18.0,bottom: 8.0,left: 5.0,right: 5.0),
                 child: Container(
-                  height: 70.0,
-                  width: 70.0,
+                  height: 50.0,
+                  width: 50.0,
                   child: SvgPicture.asset('assets/cycle.svg')
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8.0,top: 4.0),                   
+                padding: const EdgeInsets.only(bottom: 8.0,top: 8.0),                   
                 child: Text(
                   "Cycling",
                   style: TextStyle(
@@ -99,7 +99,7 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
               ),
               Container(
                 height: 40.0,
-                width: 110.0,
+                width: 120.0,
                 child: RaisedButton(
                   color: Colors.black54,
                   shape: RoundedRectangleBorder(
@@ -126,8 +126,8 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
     return List.generate(
       count, 
       (index) => Container(
-        width: 110.0,
-        height: 162.0,
+        width: 120.0,
+        height: 156.0,
         child: Card(
           elevation: 0.0,
           shape: RoundedRectangleBorder(
@@ -137,10 +137,10 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 5.0,right: 5.0),                    
+                padding: const EdgeInsets.only(top:12.0,bottom: 8.0,left: 5.0,right: 5.0),                    
                 child: Container(
-                  height: 70.0,
-                  width: 70.0,
+                  height: 60.0,
+                  width: 60.0,
                   child: SvgPicture.asset('assets/dance.svg')
                 ),
               ),
@@ -156,7 +156,7 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
               ),
               Container(
                 height: 40.0,
-                width: 110.0,
+                width: 120.0,
                 child: RaisedButton(
                   color: Colors.black54,
                   shape: RoundedRectangleBorder(
@@ -181,16 +181,17 @@ class _InstantChallengeDataState extends State<InstantChallengeData> {
 
   // Container(
   //               height: 40.0,
+  //               width: 120.0,
   //               child: RaisedButton(
   //                 color: Colors.black54,
   //                 shape: RoundedRectangleBorder(
-  //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15.0),bottomRight: Radius.circular(15.0))
+  //                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10.0),bottomRight: Radius.circular(10.0))
   //                 ),
   //                 onPressed: (){},
   //                 child: Text(
   //                   "Pay and join",
   //                   style: TextStyle(
-  //                     fontSize: 15.0,
+  //                     fontSize: 11.0,
   //                     color: Colors.white
   //                   ),
   //                 ),

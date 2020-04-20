@@ -74,15 +74,19 @@ class _ChallengeState extends State<Challenge> {
                 ],
               ),
             ),
+            SizedBox(height: height*0.01,),
+            Divider(
+              color: Colors.grey[300],
+            ),
             Container(
               child: Row(
                 // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Container(
-                    width: width*0.045,
+                  SizedBox(
+                    width: width*0.04,
                   ),
                   Container(
-                    width: width*0.27,
+                    width: width*0.28,
                     child: RaisedButton(
                       elevation: 0.5,
                       color: btn1?Color(0xff119F72):Color(0xffe6f2ff),
@@ -119,11 +123,11 @@ class _ChallengeState extends State<Challenge> {
                       )
                     ),
                   ),
-                  Container(
-                    width: width*0.045,
+                  SizedBox(
+                    width: width*0.04,
                   ),
                   Container(
-                    width: width*0.27,
+                    width: width*0.28,
                     child: RaisedButton(
                       elevation: 0.5,
                       color: btn2?Color(0xff119F72):Color(0xffe6f2ff),
@@ -160,11 +164,11 @@ class _ChallengeState extends State<Challenge> {
                       )
                     ),
                   ),
-                  Container(
-                    width: width*0.045,
+                  SizedBox(
+                    width: width*0.04,
                   ),
                   Container(
-                    width: width*0.27,
+                    width: width*0.280,
                     child: RaisedButton(
                       elevation: 0.5,
                       color: btn3?Color(0xff119F72):Color(0xffe6f2ff),
@@ -204,6 +208,10 @@ class _ChallengeState extends State<Challenge> {
                 ],
               ),
             ),
+            Divider(
+              color: Colors.grey[300],
+            ),
+            SizedBox(height: height*0.01,),
             Container(
               child: Expanded(
                 child: PageView(

@@ -7,7 +7,7 @@ class ChallengeScreenData extends StatelessWidget {
     return List.generate(
       count, 
       (index) => Container(
-        width: 110.0,
+        width: 120.0,
         height: 126.0,
         child: Card(
           shape: RoundedRectangleBorder(
@@ -20,13 +20,13 @@ class ChallengeScreenData extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top:18.0,bottom: 8.0,left: 5.0,right: 5.0),
                 child: Container(
-                  height: 60.0,
-                  width: 60.0,
+                  height: 50.0,
+                  width: 50.0,
                   child: SvgPicture.asset('assets/run.svg')
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8.0,top: 4.0),
+                padding: const EdgeInsets.only(bottom: 8.0,top: 8.0),
                 child: Text(
                   "Running",
                   style: TextStyle(
@@ -46,7 +46,7 @@ class ChallengeScreenData extends StatelessWidget {
     return List.generate(
       count, 
       (index) => Container(
-        width: 110.0,
+        width: 120.0,
         height: 126.0,
         child: Card(
           elevation: 0.0,
@@ -59,13 +59,13 @@ class ChallengeScreenData extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top:18.0,bottom: 8.0,left: 5.0,right: 5.0),
                 child: Container(
-                  height: 60.0,
-                  width: 60.0,
+                  height: 50.0,
+                  width: 50.0,
                   child: SvgPicture.asset('assets/cycle.svg')
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8.0,top: 4.0),                   
+                padding: const EdgeInsets.only(bottom: 8.0,top: 8.0),                   
                 child: Text(
                   "Cycling",
                   style: TextStyle(
@@ -85,7 +85,7 @@ class ChallengeScreenData extends StatelessWidget {
     return List.generate(
       count, 
       (index) => Container(
-        width: 110.0,
+        width: 120.0,
         height: 126.0,
         child: Card(
           elevation: 0.0,
@@ -96,10 +96,10 @@ class ChallengeScreenData extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 5.0,right: 5.0),                    
+                padding: const EdgeInsets.only(top:12.0,bottom: 8.0,left: 5.0,right: 5.0),                    
                 child: Container(
-                  height: 70.0,
-                  width: 70.0,
+                  height: 60.0,
+                  width: 60.0,
                   child: SvgPicture.asset('assets/dance.svg')
                 ),
               ),
