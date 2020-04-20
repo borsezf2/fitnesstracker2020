@@ -1,9 +1,7 @@
-import 'package:fitnesstracker2020/ChallengeScreenData.dart';
+import 'package:fitnesstracker2020/challengeScreenData.dart';
 import 'package:fitnesstracker2020/cardCaursel.dart';
 import 'package:fitnesstracker2020/instantChallengeData.dart';
-import 'package:fitnesstracker2020/screens/challenges.dart';
-import 'package:fitnesstracker2020/screens/instantChallenge.dart';
-import 'package:fitnesstracker2020/screens/publicChallenge.dart';
+import 'package:fitnesstracker2020/publicChallengeData.dart';
 import 'package:flutter/material.dart';
 
 class Challenge extends StatefulWidget {
@@ -44,175 +42,187 @@ class _ChallengeState extends State<Challenge> {
   
   @override
   Widget build(BuildContext context) {
+    final width= MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          alignment: Alignment.topCenter,
-          padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * .015),
-          child: Column(
-            children: <Widget>[
-              //Page View
-              Container(
-                height: MediaQuery.of(context).size.height*0.312,
-                child: Expanded(
-                  child: PageView(
-                    controller: _carouselController,
-                    children: <Widget>[
-                      CardCaursel(),
-                      CardCaursel(),
-                      CardCaursel()
-                    ],
-                    onPageChanged: (int index){
-                      setState(() {
-                        _currentIndex = index;
-                      });
-                    },
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Container(
+        width: width,
+        padding: EdgeInsets.only(top: height * .015),
+        child: Column(
+          children: <Widget>[
+            //Page View
+            Container(
+              height: height*0.313,
+              child: Column(
                 children: <Widget>[
-                  RaisedButton(
-                    elevation: 0.5,
-                    color: btn1?Colors.green:Color(0xffe6f2ff),
-                    shape: RoundedRectangleBorder(
-                      borderRadius:BorderRadius.circular(15.0)
+                  Expanded(
+                    child: PageView(
+                      controller: _carouselController,
+                      children: <Widget>[
+                        CardCaursel(),
+                        CardCaursel(),
+                        CardCaursel()
+                      ],
+                      onPageChanged: (int index){
+                        setState(() {
+                          _currentIndex = index;
+                        });
+                      },
                     ),
-                    onPressed: () {
-                      if (_carouselController.hasClients) {
-                        _carouselController.animateToPage(
-                          1,
-                          duration: const Duration(milliseconds: 400),
-                          curve: Curves.easeInOut,
-                        );
-                      }
-                      if (_pageController.hasClients) {
-                        _pageController.animateToPage(
-                          1, 
-                          duration: const Duration(milliseconds: 400),
-                          curve: Curves.easeInOut,
-                        );
-                      }
-                      setState(() {
-                        btn1=true;
-                        btn2=false;btn3=false;
-                      });
-                    }, 
-                    child: Padding(
-                      padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
-                      child: Text(
-                        "Instant",
-                        style: TextStyle(
-                          color: btn1? Colors.white:Colors.black,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    )
                   ),
-                  RaisedButton(
-                    elevation: 0.5,
-                    color: btn2?Colors.green:Color(0xffe6f2ff),
-                    shape: RoundedRectangleBorder(
-                      borderRadius:BorderRadius.circular(15.0)
-                    ),
-                    onPressed: () {
-                      if (_carouselController.hasClients) {
-                        _carouselController.animateToPage(
-                          2,
-                          duration: const Duration(milliseconds: 400),
-                          curve: Curves.easeInOut,
-                        );
-                      }
-                      if (_pageController.hasClients) {
-                        _pageController.animateToPage(
-                          0, 
-                          duration: const Duration(milliseconds: 400),
-                          curve: Curves.easeInOut,
-                        );
-                      }
-                      setState(() {
-                        btn2=true;
-                        btn1=false;btn3=false;
-                      });
-                    }, 
-                    child: Padding(
-                      padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
-                      child: Text(
-                        "Public",
-                        style: TextStyle(
-                          color: btn2? Colors.white:Colors.black,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.bold
-                      ),
-                      ),
-                    )
+                ],
+              ),
+            ),
+            Container(
+              child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    width: width*0.045,
                   ),
-                  RaisedButton(
-                    elevation: 0.5,
-                    color: btn3?Colors.green:Color(0xffe6f2ff),
-                    shape: RoundedRectangleBorder(
-                      borderRadius:BorderRadius.circular(15.0)
-                    ),
-                    onPressed: () {
+                  Container(
+                    width: width*0.27,
+                    child: RaisedButton(
+                      elevation: 0.5,
+                      color: btn1?Color(0xff119F72):Color(0xffe6f2ff),
+                      shape: RoundedRectangleBorder(
+                        borderRadius:BorderRadius.circular(15.0)
+                      ),
+                      onPressed: () {
                         if (_carouselController.hasClients) {
                           _carouselController.animateToPage(
-                            0,
+                            1,
                             duration: const Duration(milliseconds: 400),
                             curve: Curves.easeInOut,
                           );
                         }
                         if (_pageController.hasClients) {
-                        _pageController.animateToPage(
-                          0, 
-                          duration: const Duration(milliseconds: 400),
-                          curve: Curves.easeInOut,
-                        );
-                      }
+                          _pageController.animateToPage(
+                            1, 
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeInOut,
+                          );
+                        }
                         setState(() {
-                          btn3=true;
-                          btn2=false;btn1=false;
+                          btn1=true;
+                          btn2=false;btn3=false;
                         });
-                      },  
-                    child: Padding(
-                      padding: const EdgeInsets.only(left:12.0,right: 12.0,top: 6.0,bottom: 6.0),
+                      }, 
+                      child: Text(
+                        "Instant",
+                        style: TextStyle(
+                          color: btn1? Colors.white:Colors.black,
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.bold
+                        ),
+                      )
+                    ),
+                  ),
+                  Container(
+                    width: width*0.045,
+                  ),
+                  Container(
+                    width: width*0.27,
+                    child: RaisedButton(
+                      elevation: 0.5,
+                      color: btn2?Color(0xff119F72):Color(0xffe6f2ff),
+                      shape: RoundedRectangleBorder(
+                        borderRadius:BorderRadius.circular(15.0)
+                      ),
+                      onPressed: () {
+                        if (_carouselController.hasClients) {
+                          _carouselController.animateToPage(
+                            2,
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                        if (_pageController.hasClients) {
+                          _pageController.animateToPage(
+                            2, 
+                            duration: const Duration(milliseconds: 400),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                        setState(() {
+                          btn2=true;
+                          btn1=false;btn3=false;
+                        });
+                      }, 
+                      child: Text(
+                        "Public",
+                        style: TextStyle(
+                          color: btn2? Colors.white:Colors.black,
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.bold
+                      ),
+                      )
+                    ),
+                  ),
+                  Container(
+                    width: width*0.045,
+                  ),
+                  Container(
+                    width: width*0.27,
+                    child: RaisedButton(
+                      elevation: 0.5,
+                      color: btn3?Color(0xff119F72):Color(0xffe6f2ff),
+                      shape: RoundedRectangleBorder(
+                        borderRadius:BorderRadius.circular(15.0)
+                      ),
+                      onPressed: () {
+                          if (_carouselController.hasClients) {
+                            _carouselController.animateToPage(
+                              0,
+                              duration: const Duration(milliseconds: 400),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                          if (_pageController.hasClients) {
+                            _pageController.animateToPage(
+                              0, 
+                              duration: const Duration(milliseconds: 400),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                          setState(() {
+                            btn3=true;
+                            btn2=false;btn1=false;
+                          });
+                        },  
                       child: Text(
                         "Challenge",
                         style: TextStyle(
                           color: btn3? Colors.white:Colors.black,
-                        fontSize: 15.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.bold
                       ),
-                      ),
-                    )
+                      )
+                    ),
                   )
                 ],
               ),
-              //Home page data
-              // ChallengeScreenData(),
-              Container(
-                child: Expanded(
-                  child: PageView(
-                    scrollDirection: Axis.horizontal,
-                    controller: _pageController,
-                    children: <Widget>[
-                      ChallengeScreenData(),
-                      InstantChallengeData(),
-                    ],
-                    onPageChanged: (int index){
-                      setState(() {
-                        _index = index;
-                      });
-                    },
-                  ),
+            ),
+            Container(
+              child: Expanded(
+                child: PageView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _pageController,
+                  children: <Widget>[
+                    ChallengeScreenData(),
+                    InstantChallengeData(),
+                    PublicChallengeData(),
+                  ],
+                  onPageChanged: (int index){
+                    setState(() {
+                      _index = index;
+                    });
+                  },
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

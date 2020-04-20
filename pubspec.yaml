@@ -60,12 +60,15 @@ flutter:
     - assets/alarm-clock.gif
     - assets/bike.svg
     - assets/run.svg
+    - assets/cycle.svg
+    - assets/dance.svg
     - assets/user.svg
     - assets/alarm-line.svg
     - assets/flashlight.svg
     - assets/rewards.svg
     - assets/personal.svg
     - assets/personal2.svg
+    - assets/running.svg
     - assets/share.svg
     - assets/reward1.png
     - assets/reward2.png
