@@ -32,6 +32,7 @@ class _CardCaurselState extends State<CardCaursel> {
         CarouselSlider(
         height: 200.0,
         autoPlay: true,
+        enlargeCenterPage: true,
         autoPlayInterval: Duration(seconds: 3),
         autoPlayAnimationDuration: Duration(milliseconds: 800),
         autoPlayCurve: Curves.fastOutSlowIn,

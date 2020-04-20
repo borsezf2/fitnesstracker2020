@@ -3,112 +3,118 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class ChallengeScreenData extends StatelessWidget {
 
-  List<Card>_widget1(int count){
+  List<Container>_widget1(int count){
     return List.generate(
       count, 
-      (index) => Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15.0))
-        ),
-        elevation: 0.0,
-        color: Color(0xffffd9b3),
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 5.0,right: 5.0),
-              child: Container(
-                height: 78.0,
-                width: 100.0,
-                child: SvgPicture.asset('assets/run.svg')
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Text(
-                "Running",
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold
+      (index) => Container(
+        width: 120.0,
+        height: 126.0,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10.0))
+          ),
+          elevation: 0.0,
+          color: Color.fromRGBO(255, 223, 200, 0.6),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top:18.0,bottom: 8.0,left: 5.0,right: 5.0),
+                child: Container(
+                  height: 50.0,
+                  width: 50.0,
+                  child: SvgPicture.asset('assets/run.svg')
                 ),
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0,top: 8.0),
+                child: Text(
+                  "Running",
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     ).toList();
   }
 
-  List<Card>_widget2(int count){
+  List<Container>_widget2(int count){
     return List.generate(
       count, 
-      (index) => Card(
-        elevation: 0.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15.0))
-        ),
-        color: Color(0xffe6f2ff),
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 5.0,right: 5.0),
-              child: Container(
-                height: 78.0,
-                width: 100.0,
-                child: Icon(
-                  Icons.ac_unit,
-                  size: 80.0,
+      (index) => Container(
+        width: 120.0,
+        height: 126.0,
+        child: Card(
+          elevation: 0.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10.0))
+          ),
+          color: Color.fromRGBO(198, 221, 255, 0.6),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top:18.0,bottom: 8.0,left: 5.0,right: 5.0),
+                child: Container(
+                  height: 50.0,
+                  width: 50.0,
+                  child: SvgPicture.asset('assets/cycle.svg')
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),                   
-              child: Text(
-                "Running",
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0,top: 8.0),                   
+                child: Text(
+                  "Cycling",
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     ).toList();
   }
 
-  List<Card>_widget3(int count){
+  List<Container>_widget3(int count){
     return List.generate(
       count, 
-      (index) => Card(
-        elevation: 0.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(15.0))
-        ),
-        color: Color(0xffd6f5d6),
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top:8.0,bottom: 8.0,left: 5.0,right: 5.0),                    
-              child: Container(
-                height: 78.0,
-                width: 100.0,
-                child: Icon(
-                  Icons.ac_unit,
-                  size: 80.0,
+      (index) => Container(
+        width: 120.0,
+        height: 126.0,
+        child: Card(
+          elevation: 0.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(10.0))
+          ),
+          color: Color.fromRGBO(182, 225, 210, 0.6),
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top:12.0,bottom: 8.0,left: 5.0,right: 5.0),                    
+                child: Container(
+                  height: 60.0,
+                  width: 60.0,
+                  child: SvgPicture.asset('assets/dance.svg')
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Text(
-                "Running",
-                style: TextStyle(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.bold
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8.0,top: 4.0),
+                child: Text(
+                  "Dancing",
+                  style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       )
     ).toList();
