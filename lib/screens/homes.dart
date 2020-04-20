@@ -122,208 +122,211 @@ class _HomeState extends State<Home> {
                   colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
                 )          
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(left:10.0,right: 10.0),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(height:25.0),
-                    Text(
-                      "Abhi Nhi To Kabhi Nhi",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    Text(
-                      "Alarm Lagao",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    ///content to be added
-                    SizedBox(
-                      child: Image.asset('assets/alarm-clock.gif'),
-                    ),
-                    SizedBox(height:20.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Container(
-                          width: 140.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.blue
-                            )
-                          ),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding: const EdgeInsets.only(left:10.0,right: 10.0),
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(height:25.0),
+                      Text(
+                        "Abhi Nhi To Kabhi Nhi",
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold
                         ),
-                        SizedBox(width:20.0),
-                        Container(
-                          width: 80.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.blue
-                            )
-                          ),
-                        )
-                      ],
-                    ),
-                    SizedBox(height:10.0),
-                    Divider(
-                      thickness: 0.75,
-                      color: Colors.black54,
-                    ),
-                    Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: <Widget>[
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              child: Align(
-                                alignment: Alignment.centerRight,
-                                child: Icon(
-                                  Icons.arrow_forward,
-                                  size: 32.0,
-                                ),
+                      ),
+                      Text(
+                        "Alarm Lagao",
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                      ///content to be added
+                      SizedBox(
+                        child: Image.asset('assets/alarm-clock.gif'),
+                      ),
+                      SizedBox(height:20.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Container(
+                            width: 140.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.blue
                               )
                             ),
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                children: <Widget>[
-                                  Container(
-                                    width: 82.0,
-                                    height: 82.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Color(0xff119F72)
-                                        )
-                                      ),
-                                      child: Image.asset('assets/reward1.png'),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 82.0,
-                                    height: 82.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Color(0xff119F72)
-                                        )
-                                      ),
-                                      child: Image.asset('assets/reward1.png'),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 82.0,
-                                    height: 82.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Color(0xff119F72)
-                                        )
-                                      ),
-                                      child: Image.asset('assets/reward1.png'),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 82.0,
-                                    height: 82.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Color(0xff119F72)
-                                        )
-                                      ),
-                                      child: Image.asset('assets/reward1.png'),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 82.0,
-                                    height: 82.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Color(0xff119F72)
-                                        )
-                                      ),
-                                      child: Image.asset('assets/reward1.png'),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 82.0,
-                                    height: 82.0,
-                                    child: Card(
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(Radius.circular(12.0)),
-                                        side: BorderSide(
-                                          color: Color(0xff119F72)
-                                        )
-                                      ),
-                                      child: Image.asset('assets/reward1.png'),
-                                    ),
-                                  )
-                                ],
-                              ),
+                          ),
+                          SizedBox(width:20.0),
+                          Container(
+                            width: 80.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.blue
+                              )
                             ),
-                          ],
-                        ),
+                          )
+                        ],
                       ),
-                    ),
-                    SizedBox(height:15.0),
-                    TextField(
-                      controller: _searchController,
-                      decoration: InputDecoration(
-                        contentPadding: EdgeInsets.symmetric(horizontal: 6.0),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                        ),
-                        hintText: "Enter text",
-                        filled: true,
-                        fillColor: Colors.white,
-                        focusColor: Colors.white,
-                        hoverColor: Colors.white
+                      SizedBox(height:10.0),
+                      Divider(
+                        thickness: 0.75,
+                        color: Colors.black54,
                       ),
-                    ),
-                    SizedBox(height:40.0),
-                    Container(
-                      width: 120.0,
-                      height: 40.0,
-                      child: RaisedButton(
-                        color: Colors.blueAccent,
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(
-                            color: Colors.blueAccent
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: <Widget>[
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width,
+                                child: Align(
+                                  alignment: Alignment.centerRight,
+                                  child: Icon(
+                                    Icons.arrow_forward,
+                                    size: 32.0,
+                                  ),
+                                )
+                              ),
+                              SingleChildScrollView(
+                                scrollDirection: Axis.horizontal,
+                                child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      width: 82.0,
+                                      height: 82.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Color(0xff119F72)
+                                          )
+                                        ),
+                                        child: Image.asset('assets/reward1.png'),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 82.0,
+                                      height: 82.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Color(0xff119F72)
+                                          )
+                                        ),
+                                        child: Image.asset('assets/reward1.png'),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 82.0,
+                                      height: 82.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Color(0xff119F72)
+                                          )
+                                        ),
+                                        child: Image.asset('assets/reward1.png'),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 82.0,
+                                      height: 82.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Color(0xff119F72)
+                                          )
+                                        ),
+                                        child: Image.asset('assets/reward1.png'),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 82.0,
+                                      height: 82.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Color(0xff119F72)
+                                          )
+                                        ),
+                                        child: Image.asset('assets/reward1.png'),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 82.0,
+                                      height: 82.0,
+                                      child: Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                                          side: BorderSide(
+                                            color: Color(0xff119F72)
+                                          )
+                                        ),
+                                        child: Image.asset('assets/reward1.png'),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          borderRadius: BorderRadius.circular(22.0)
                         ),
-                        onPressed: (){
-                          Navigator.of(context).pop();
-                        }, 
-                        child: Text(
-                          "OK",
-                          style: TextStyle(
-                            fontSize: 19.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
-                          ),
-                        )
                       ),
-                    ),
-                    SizedBox(height:30.0),
-                  ],
+                      SizedBox(height:15.0),
+                      TextField(
+                        controller: _searchController,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.symmetric(horizontal: 6.0),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey, width: 1.0),
+                          ),
+                          hintText: "Enter text",
+                          filled: true,
+                          fillColor: Colors.white,
+                          focusColor: Colors.white,
+                          hoverColor: Colors.white
+                        ),
+                      ),
+                      SizedBox(height:40.0),
+                      Container(
+                        width: 120.0,
+                        height: 40.0,
+                        child: RaisedButton(
+                          color: Colors.blueAccent,
+                          shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                              color: Colors.blueAccent
+                            ),
+                            borderRadius: BorderRadius.circular(22.0)
+                          ),
+                          onPressed: (){
+                            Navigator.of(context).pop();
+                          }, 
+                          child: Text(
+                            "OK",
+                            style: TextStyle(
+                              fontSize: 19.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold
+                            ),
+                          )
+                        ),
+                      ),
+                      SizedBox(height:30.0),
+                    ],
+                  ),
                 ),
               ),
             )
