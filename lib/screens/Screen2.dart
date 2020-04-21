@@ -51,9 +51,10 @@ class _ChallengeState extends State<Challenge> {
         padding: EdgeInsets.only(top: height * .015),
         child: Column(
           children: <Widget>[
+            SizedBox(height: height*0.035),
             //Page View
             Container(
-              height: height*0.313,
+              height: height*0.317,
               child: Column(
                 children: <Widget>[
                   Expanded(
@@ -74,9 +75,9 @@ class _ChallengeState extends State<Challenge> {
                 ],
               ),
             ),
-            SizedBox(height: height*0.01,),
+            // SizedBox(height: height*0.01,),
             Divider(
-              color: Colors.grey[300],
+              color: Colors.grey,
             ),
             Container(
               child: Row(
@@ -209,9 +210,9 @@ class _ChallengeState extends State<Challenge> {
               ),
             ),
             Divider(
-              color: Colors.grey[300],
+              color: Colors.grey,
             ),
-            SizedBox(height: height*0.01,),
+            SizedBox(height: height*0.015,),
             Container(
               child: Expanded(
                 child: PageView(
