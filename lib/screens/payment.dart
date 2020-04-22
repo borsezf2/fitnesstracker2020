@@ -1,4 +1,7 @@
+import 'package:fitnesstracker2020/UPI.dart';
+import 'package:fitnesstracker2020/cardPay.dart';
 import 'package:fitnesstracker2020/netBanking.dart';
+import 'package:fitnesstracker2020/wallet.dart';
 import 'package:flutter/material.dart';
 
 class Payment extends StatefulWidget {
@@ -36,6 +39,36 @@ class _PaymentState extends State<Payment> {
 
   @override
   Widget build(BuildContext context) {
+    if(_currentindex==0){
+      setState(() {
+        wallet=true;
+        upi=false;
+        card=false;
+        net=false;
+      });
+    }else if(_currentindex==1){
+      setState(() {
+        upi=true;
+        wallet=false;
+        card=false;
+        net=false;
+      });
+    }else if(_currentindex==2){
+      setState(() {
+        card=true;
+        wallet=false;
+        upi=false;
+        net=false;
+      });
+    }else{
+      setState(() {
+        net=true;
+        wallet=false;
+        card=false;
+        upi=false;
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -190,15 +223,14 @@ class _PaymentState extends State<Payment> {
               ),
             ],
           ),
-          SizedBox(height: MediaQuery.of(context).size.height*0.04,),
           Container(
             child: Expanded(
               child: PageView(
                 controller: _paycontroller,
                 children: <Widget>[
-                  Center(child: Text('data1'),),
-                  Center(child: Text('data2'),),
-                  Center(child: Text('data3'),),
+                  Wallet(),
+                  UPI(),
+                  CardPay(),
                   NetBanking()
                 ],
                 onPageChanged: (int index){

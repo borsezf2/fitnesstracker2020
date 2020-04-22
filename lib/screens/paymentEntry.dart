@@ -14,7 +14,7 @@ class _PaymentEntryState extends State<PaymentEntry> {
   bool beginnerbtn,playerbtn,expertbtn;
   TextEditingController _paycontroller=TextEditingController();
   bool pay2k,pay1k,pay500,pay200,pay100,pay50;
-  String amount;
+  String amount,errorMsg;
 
   @override
   void initState() {
@@ -27,6 +27,7 @@ class _PaymentEntryState extends State<PaymentEntry> {
     pay200=false;
     pay100=false;
     pay50=false;
+    errorMsg="";
     super.initState();
   }
 
@@ -423,13 +424,29 @@ class _PaymentEntryState extends State<PaymentEntry> {
                           )
                         ],
                       ),
-                      SizedBox(height: MediaQuery.of(context).size.height*0.025,),
+                      SizedBox(height: MediaQuery.of(context).size.height*0.01),
+                      Center(
+                        child: Text(
+                          errorMsg,
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 11.0
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: MediaQuery.of(context).size.height*0.006),
                       Container(
                         width: MediaQuery.of(context).size.width,
                         child: RaisedButton(
                           color: Colors.blueAccent,
                           onPressed:(){
-                            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Payment(amount)));
+                            if(amount!=null){
+                              Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>Payment(amount)));
+                            }else{
+                              setState(() {
+                                errorMsg="Please Enter Money";
+                              });
+                            }
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(15.0),

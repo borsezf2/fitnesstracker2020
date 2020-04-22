@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-class NetBanking extends StatefulWidget {
-  NetBanking({Key key}) : super(key: key);
+class Wallet extends StatefulWidget {
+  Wallet({Key key}) : super(key: key);
 
   @override
-  _NetBankingState createState() => _NetBankingState();
+  _WalletState createState() => _WalletState();
 }
 
-class _NetBankingState extends State<NetBanking> {
+class _WalletState extends State<Wallet> {
   @override
   Widget build(BuildContext context) {
-    final width=MediaQuery.of(context).size.width;
-    final height=MediaQuery.of(context).size.height;
     return Column(
       children: <Widget>[
         SizedBox(height: MediaQuery.of(context).size.height*0.04,),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            // SizedBox(width: width*0.025,),
             Column(
               children: <Widget>[
                 Container(
@@ -29,19 +25,18 @@ class _NetBankingState extends State<NetBanking> {
                     shape: BoxShape.circle,
                     color: Colors.white,
                     image: DecorationImage(
-                      image: AssetImage('assets/hdfc.png')
+                      image: AssetImage('assets/amazonpay.png'),
                     )
                   ),
                 ),
                 Text(
-                  'HDFC Bank',
+                  'Amazon Pay',
                   style: TextStyle(
                     fontSize: 11.0
                   ),
                 )
               ],
             ),
-            // SizedBox(width: width*0.18,),
             Column(
               children: <Widget>[
                 Container(
@@ -51,40 +46,39 @@ class _NetBankingState extends State<NetBanking> {
                     shape: BoxShape.circle,
                     color: Colors.white,
                     image: DecorationImage(
-                      image: AssetImage('assets/SBI.png')
+                      image: AssetImage('assets/paytm.png'),
                     )
                   ),
                 ),
                 Text(
-                  'State Bank of India',
-                  style: TextStyle(
-                    fontSize: 11.0
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: <Widget>[
-                Container(
-                  width: MediaQuery.of(context).size.width*0.15,
-                  height: MediaQuery.of(context).size.height*0.1,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    image: DecorationImage(
-                      image: AssetImage('assets/ICICI.png')
-                    )
-                  ),
-                ),
-                Text(
-                  'ICICI Bank',
+                  'Paytm',
                   style: TextStyle(
                     fontSize: 11.0
                   ),
                 )
               ],
             ),
-            // SizedBox(width: width*0.187,),
+            Column(
+              children: <Widget>[
+                Container(
+                  width: MediaQuery.of(context).size.width*0.15,
+                  height: MediaQuery.of(context).size.height*0.1,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.white,
+                    image: DecorationImage(
+                      image: AssetImage('assets/phonepe.png'),
+                    )
+                  ),
+                ),
+                Text(
+                  'PhonePe',
+                  style: TextStyle(
+                    fontSize: 11.0
+                  ),
+                )
+              ],
+            )
           ],
         ),
         SizedBox(height: MediaQuery.of(context).size.height*0.03,),
@@ -100,12 +94,12 @@ class _NetBankingState extends State<NetBanking> {
                     shape: BoxShape.circle,
                     color: Colors.white,
                     image: DecorationImage(
-                      image: AssetImage('assets/yesbnk.png')
+                      image: AssetImage('assets/freecharge.png'),
                     )
                   ),
                 ),
                 Text(
-                  'Yes Bank',
+                  'Freecharge',
                   style: TextStyle(
                     fontSize: 11.0
                   ),
@@ -121,12 +115,12 @@ class _NetBankingState extends State<NetBanking> {
                     shape: BoxShape.circle,
                     color: Colors.white,
                     image: DecorationImage(
-                      image: AssetImage('assets/pnb.png')
+                      image: AssetImage('assets/mobikwik.png'),
                     )
                   ),
                 ),
                 Text(
-                  'Punjab National Bank',
+                  'Mobikwik',
                   style: TextStyle(
                     fontSize: 11.0
                   ),
@@ -142,12 +136,12 @@ class _NetBankingState extends State<NetBanking> {
                     shape: BoxShape.circle,
                     color: Colors.white,
                     image: DecorationImage(
-                      image: AssetImage('assets/axis.jpg')
+                      image: AssetImage('assets/mobikwik.png'),
                     )
                   ),
                 ),
                 Text(
-                  'Axis Bank',
+                  'Mobikwik',
                   style: TextStyle(
                     fontSize: 11.0
                   ),
@@ -164,7 +158,7 @@ class _NetBankingState extends State<NetBanking> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Text(
-              'View all banks',
+              'View all wallets',
               style: TextStyle(
                 fontSize: 13.0
               ),
