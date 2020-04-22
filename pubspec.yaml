@@ -72,7 +72,24 @@ flutter:
     - assets/share.svg
     - assets/reward1.png
     - assets/reward2.png
-
+    - assets/carousel.jpeg
+    - assets/axis.jpg
+    - assets/hdfc.png
+    - assets/pnb.png
+    - assets/ICICI.png
+    - assets/SBI.png
+    - assets/yesbnk.png
+    - assets/hdfc.svg
+    - assets/amazonpay.png
+    - assets/bhimupi.png
+    - assets/gpay.png
+    - assets/paytm.png
+    - assets/phonepe.png
+    - assets/freecharge.png
+    - assets/mobikwik.png
+    - assets/visa.png
+    - assets/mastercard.png
+    - assets/rupay.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
