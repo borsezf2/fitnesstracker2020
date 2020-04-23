@@ -25,6 +25,7 @@ class _HomeState extends State<Home> {
   
   bool weekly;
   bool instbtn,follow,alarm;
+  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
 
   @override
   void initState() {
@@ -392,104 +393,105 @@ class _HomeState extends State<Home> {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      key: _drawerKey,
       backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(80.0),
-        child: Padding(
-          padding: const EdgeInsets.only(top:.0),
-          child: AppBar(
-            elevation: 0.0,
-            // backgroundColor: Color.fromRGBO(255, 247, 241, 1),
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  // stops: [0.9,0.4],
-                  colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
-                )          
-              ),
-            ),
-            leading: Builder(
-              builder: (BuildContext context) {
-                return GestureDetector(
-                  onTap: (){
-                    Scaffold.of(context).openDrawer();
-                  },
-                  child: SvgPicture.asset(
-                    'assets/personal.svg',
-                    height: 15.0,width: 15.0,
-                  )
-                );
-              }
-            ),
-            title: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 38.0,
-              child: TextField(
-                controller: _searchController,
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                    borderRadius: BorderRadius.circular(25.0)
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 1.0),
-                    borderRadius: BorderRadius.circular(25.0)
-                  ),
-                  hintText: '                   Home/Work',
-                  hintStyle: TextStyle(
-                    color: Colors.black26,
-                    fontWeight: FontWeight.bold
-                  ),
-                  suffixIcon: Container(
-                    // decoration: BoxDecoration(
-                    //   borderRadius: BorderRadius.circular(100),
-                    //   border: Border.all(width: 1.0, color: Colors.grey)
-                    // ),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.search,
-                        color: Colors.black,
-                      ),
-                      onPressed: (){},
-                    ),
-                  ),
-                  // filled: true,
-                  // fillColor: Colors.white,
-                  // focusColor: Colors.white,
-                  // hoverColor: Colors.white
-                ),
-                onSubmitted: (input){},
-              ),
-            ),
-            actions: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top:10.0,right: 8.0),
-                child: Column(
-                  children: <Widget>[
-                    Text(
-                      "Rank",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                    Text(
-                      "2000",
-                      style: TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromHeight(80.0),
+      //   child: Padding(
+      //     padding: const EdgeInsets.only(top:.0),
+      //     child: AppBar(
+      //       elevation: 0.0,
+      //       // backgroundColor: Color.fromRGBO(255, 247, 241, 1),
+      //       flexibleSpace: Container(
+      //         decoration: BoxDecoration(
+      //           gradient: LinearGradient(
+      //             begin: Alignment.topCenter,
+      //             end: Alignment.bottomCenter,
+      //             // stops: [0.9,0.4],
+      //             colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+      //           )          
+      //         ),
+      //       ),
+      //       leading: Builder(
+      //         builder: (BuildContext context) {
+      //           return GestureDetector(
+      //             onTap: (){
+      //               Scaffold.of(context).openDrawer();
+      //             },
+      //             child: SvgPicture.asset(
+      //               'assets/personal.svg',
+      //               height: 15.0,width: 15.0,
+      //             )
+      //           );
+      //         }
+      //       ),
+      //       title: Container(
+      //         width: MediaQuery.of(context).size.width,
+      //         height: 38.0,
+      //         child: TextField(
+      //           controller: _searchController,
+      //           decoration: InputDecoration(
+      //             contentPadding: EdgeInsets.symmetric(horizontal: 8.0),
+      //             focusedBorder: OutlineInputBorder(
+      //               borderSide: BorderSide(color: Colors.grey, width: 1.0),
+      //               borderRadius: BorderRadius.circular(25.0)
+      //             ),
+      //             enabledBorder: OutlineInputBorder(
+      //               borderSide: BorderSide(color: Colors.grey, width: 1.0),
+      //               borderRadius: BorderRadius.circular(25.0)
+      //             ),
+      //             hintText: '                   Home/Work',
+      //             hintStyle: TextStyle(
+      //               color: Colors.black26,
+      //               fontWeight: FontWeight.bold
+      //             ),
+      //             suffixIcon: Container(
+      //               // decoration: BoxDecoration(
+      //               //   borderRadius: BorderRadius.circular(100),
+      //               //   border: Border.all(width: 1.0, color: Colors.grey)
+      //               // ),
+      //               child: IconButton(
+      //                 icon: Icon(
+      //                   Icons.search,
+      //                   color: Colors.black,
+      //                 ),
+      //                 onPressed: (){},
+      //               ),
+      //             ),
+      //             // filled: true,
+      //             // fillColor: Colors.white,
+      //             // focusColor: Colors.white,
+      //             // hoverColor: Colors.white
+      //           ),
+      //           onSubmitted: (input){},
+      //         ),
+      //       ),
+      //       actions: <Widget>[
+      //         Padding(
+      //           padding: const EdgeInsets.only(top:10.0,right: 8.0),
+      //           child: Column(
+      //             children: <Widget>[
+      //               Text(
+      //                 "Rank",
+      //                 style: TextStyle(
+      //                   color: Colors.black87,
+      //                   fontWeight: FontWeight.bold
+      //                 ),
+      //               ),
+      //               Text(
+      //                 "2000",
+      //                 style: TextStyle(
+      //                   color: Colors.black87,
+      //                   fontWeight: FontWeight.bold
+      //                 ),
+      //               )
+      //             ],
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       drawer: Drawer(
         child: Container(
           color: Colors.white,
@@ -743,6 +745,7 @@ class _HomeState extends State<Home> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              _getAppBar(),
               Container(
                 child: Column(
                   children: <Widget>[
@@ -1061,6 +1064,97 @@ class _HomeState extends State<Home> {
           ),
         ),
       )
+    );
+  }
+  Widget _getAppBar(){
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height*.13,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          // stops: [0.9,0.4],
+          colors:[Color.fromRGBO(255, 247, 241, 1),Colors.white]
+        )          
+      ),
+      child: Padding(
+        padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.06,),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            // SizedBox(width: MediaQuery.of(context).size.width*0.015,),
+            IconButton(
+              icon: Icon(
+                Icons.person,
+                size: 30.0,
+              ),
+              onPressed: (){
+                _drawerKey.currentState.openDrawer();
+              },
+            ),
+            SizedBox(width: MediaQuery.of(context).size.width*0.01,),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "Rank",
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.0
+                  ),
+                ),
+                Text(
+                  "2000",
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.0
+                  ),
+                )
+              ],
+            ),
+            Container(
+              width:MediaQuery.of(context).size.width*0.6,
+              child: Stack(
+                children: <Widget>[
+                  SizedBox(height: MediaQuery.of(context).size.height*0.016,),
+                  Center(
+                    child: Text(
+                      'Home/Work',
+                      style: TextStyle(
+                        fontSize: 20.0
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 40,
+                    left: 25,
+                    child: Container(
+                      width: 200.0,
+                      child: Divider(
+                        color: Colors.grey[300],
+                        thickness: 1.0,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Icon(
+              Icons.account_balance_wallet,
+              size: 30.0,
+            ),
+            SizedBox(width: MediaQuery.of(context).size.width*0.02,),
+            Icon(
+              Icons.notifications,
+              size: 30.0,
+            ),
+            SizedBox(width: MediaQuery.of(context).size.width*0.015,),
+          ],
+        ),
+      ),
     );
   }
 }
