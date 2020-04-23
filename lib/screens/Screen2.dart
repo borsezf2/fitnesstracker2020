@@ -90,9 +90,12 @@ class _ChallengeState extends State<Challenge> {
                     width: width*0.28,
                     child: RaisedButton(
                       elevation: 0.5,
-                      color: btn1?Color(0xff119F72):Color(0xffe6f2ff),
+                      color: btn1?Color(0xff119F72):Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius:BorderRadius.circular(15.0)
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        side: BorderSide(
+                          color: Color(0xff119F72)
+                        )
                       ),
                       onPressed: () {
                         if (_carouselController.hasClients) {
@@ -131,9 +134,12 @@ class _ChallengeState extends State<Challenge> {
                     width: width*0.28,
                     child: RaisedButton(
                       elevation: 0.5,
-                      color: btn2?Color(0xff119F72):Color(0xffe6f2ff),
+                      color: btn2?Color(0xff119F72):Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius:BorderRadius.circular(15.0)
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        side: BorderSide(
+                          color: Color(0xff119F72)
+                        )
                       ),
                       onPressed: () {
                         if (_carouselController.hasClients) {
@@ -172,9 +178,12 @@ class _ChallengeState extends State<Challenge> {
                     width: width*0.280,
                     child: RaisedButton(
                       elevation: 0.5,
-                      color: btn3?Color(0xff119F72):Color(0xffe6f2ff),
+                      color: btn3?Color(0xff119F72):Colors.white,
                       shape: RoundedRectangleBorder(
-                        borderRadius:BorderRadius.circular(15.0)
+                        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                        side: BorderSide(
+                          color: Color(0xff119F72)
+                        )
                       ),
                       onPressed: () {
                           if (_carouselController.hasClients) {
