@@ -1,3 +1,4 @@
+import 'package:fitnesstracker2020/screens/followFriend.dart';
 import 'package:fitnesstracker2020/screens/paymentEntry.dart';
 import 'package:fitnesstracker2020/screens/profile.dart';
 import "package:flutter/material.dart";
@@ -813,6 +814,7 @@ class _HomeState extends State<Home> {
                                     follow=true;
                                     instbtn=false;alarm=false;
                                   });
+                                  Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>FollowFriend()));
                                 },
                                 child: Text(
                                   "Follow friend",
@@ -1069,7 +1071,7 @@ class _HomeState extends State<Home> {
   Widget _getAppBar(){
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height*.13,
+      height: MediaQuery.of(context).size.height*.12,
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -1079,7 +1081,7 @@ class _HomeState extends State<Home> {
         )          
       ),
       child: Padding(
-        padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.06,),
+        padding: EdgeInsets.only(top:MediaQuery.of(context).size.height*0.034,),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
@@ -1130,7 +1132,7 @@ class _HomeState extends State<Home> {
                   ),
                   Positioned(
                     top: 40,
-                    left: 25,
+                    left: 18,
                     child: Container(
                       width: 200.0,
                       child: Divider(
